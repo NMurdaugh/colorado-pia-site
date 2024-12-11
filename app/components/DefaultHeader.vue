@@ -1,6 +1,6 @@
 <template>
   <UHeader :links>
-    <template #right?>
+    <template #right>
       <UColorModeButton />
     </template>
   </UHeader>
