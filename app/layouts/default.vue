@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-5xl">
+  <div class="container mx-auto max-w-full">
     <DefaultHeader />
     <main class="p-2 mt-10">
       <slot />
