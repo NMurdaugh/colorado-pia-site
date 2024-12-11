@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/content",
     "@nuxtjs/i18n",
+    "@nuxt/fonts",
   ],
   future: {
     compatibilityVersion: 4,
