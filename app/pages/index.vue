@@ -25,5 +25,11 @@
         <span class="text-primary-400 block">Future</span>
       </h1></template
     >
+    <template #default>
+      <NuxtImg
+        src="/denver-skyline-sunset.jpg"
+        class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
+      />
+    </template>
   </ULandingHero>
 </template>
