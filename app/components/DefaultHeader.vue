@@ -1,10 +1,10 @@
 <template>
   <UHeader :links>
-    <template
-      #logo
-      class="line-clamp-2"
-    >
-      <p>Colorado Protection and Investigation Agency</p>
+    <template #logo>
+      <NuxtImg
+        src="/colorado-pia-logo.png"
+        class="w-auto h-6"
+      />
     </template>
     <template #right>
       <UColorModeButton />
@@ -14,10 +14,6 @@
 
 <script setup>
   const links = [
-    {
-      label: "About Us",
-      to: "/about",
-    },
     {
       label: "Protection Services",
       to: "/services",
@@ -43,6 +39,10 @@
     {
       label: "Training",
       to: "/training",
+    },
+    {
+      label: "About Us",
+      to: "/about",
     },
   ];
 </script>
