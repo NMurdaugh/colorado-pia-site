@@ -19,20 +19,24 @@
       to: "/about",
     },
     {
-      label: "Services",
+      label: "Protection Services",
       to: "/services",
       children: [
         {
-          label: "Corporate Security",
+          label: "Corporate",
           to: "/corporate-security",
         },
         {
-          label: "School Security",
+          label: "Schools",
           to: "/school-security",
         },
         {
-          label: "Place of Worship Security",
+          label: "Places of Worship",
           to: "/worship-security",
+        },
+        {
+          label: "Ultra High Networth Individuals",
+          to: "/high-networth-security",
         },
       ],
     },
