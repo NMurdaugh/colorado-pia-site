@@ -1,11 +1,29 @@
 <script setup lang="ts">
-const route = useRoute()
+  const route = useRoute();
+  const links = [
+    {
+      label: "Book a consultation",
+      size: "lg",
+    },
+    {
+      label: "Emergency Service",
+      size: "lg",
+    },
+  ];
 </script>
 
 <template>
-  <div>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank">Learn more about Nuxt Routing</a>
-  </div>
+  <ULandingHero
+    description="Professional armed security services protecting what matters most with trained professionals and comprehensive solutions."
+    :links
+  >
+    <template #title
+      ><h1
+        class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white lg:text-7xl"
+      >
+        Protecting Denver's
+        <span class="text-primary-400 block">Future</span>
+      </h1></template
+    >
+  </ULandingHero>
 </template>
