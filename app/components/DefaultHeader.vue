@@ -1,5 +1,11 @@
 <template>
   <UHeader :links>
+    <template
+      #logo
+      class="line-clamp-2"
+    >
+      <p>Colorado Protection and Investigation Agency</p>
+    </template>
     <template #right>
       <UColorModeButton />
     </template>
