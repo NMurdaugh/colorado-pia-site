@@ -40,6 +40,10 @@
         },
       ],
     },
+    {
+      label: "Training",
+      to: "/training",
+    },
   ];
 </script>
 
