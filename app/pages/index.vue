@@ -22,7 +22,7 @@
         class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
       >
         Protecting Colorado's
-        <span class="text-primary-400 block">Future</span>
+        <span class="text-primary block">Future</span>
       </h1></template
     >
     <template #default>
