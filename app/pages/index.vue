@@ -21,7 +21,7 @@
       ><h1
         class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white lg:text-7xl"
       >
-        Protecting Denver's
+        Protecting Colorado's
         <span class="text-primary-400 block">Future</span>
       </h1></template
     >
