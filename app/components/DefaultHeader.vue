@@ -3,7 +3,7 @@
     <template #logo>
       <NuxtImg
         src="/colorado-pia-logo.png"
-        class="w-auto h-6"
+        class="w-auto h-16"
       />
     </template>
     <template #right>
