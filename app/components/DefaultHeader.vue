@@ -1,9 +1,12 @@
 <template>
-  <UHeader :links>
+  <UHeader
+    :links
+    :ui="{ wrapper: 'py-6' }"
+  >
     <template #logo>
       <NuxtImg
         src="/colorado-pia-logo.png"
-        class="w-auto h-16"
+        class="w-auto h-20"
       />
     </template>
     <template #right>
