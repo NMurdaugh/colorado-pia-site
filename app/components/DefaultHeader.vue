@@ -1,7 +1,7 @@
 <template>
   <UHeader
     :links
-    :ui="{ wrapper: 'py-6' }"
+    :ui
   >
     <template #logo>
       <NuxtImg
@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+  const ui = /* ui */ { wrapper: "py-6" };
+
   const links = [
     {
       label: "Protection Services",
