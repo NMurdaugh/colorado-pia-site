@@ -16,7 +16,9 @@
 </template>
 
 <script setup>
-  const ui = /* ui */ { wrapper: "py-2 md:py-6" };
+  const ui = /* ui */ {
+    wrapper: "py-2 md:py-6",
+  };
 
   const links = [
     {
