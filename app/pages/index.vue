@@ -1,5 +1,10 @@
 <script setup lang="ts">
   const route = useRoute();
+
+  const ui = /* ui */ {
+    wrapper: "bg-[url('/denver-skyline-sunset.jpg')]",
+  };
+
   const links = [
     {
       label: "Book a consultation",
@@ -19,6 +24,7 @@
   <ULandingHero
     description="Professional armed security services protecting what matters most with trained professionals and comprehensive solutions."
     :links
+    :ui
   >
     <template #title
       ><h1
@@ -28,11 +34,5 @@
         <span class="text-primary block">Future</span>
       </h1></template
     >
-    <template #default>
-      <NuxtImg
-        src="/denver-skyline-sunset.jpg"
-        class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
-      />
-    </template>
   </ULandingHero>
 </template>
