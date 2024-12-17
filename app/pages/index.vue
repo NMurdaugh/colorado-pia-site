@@ -2,7 +2,7 @@
   const route = useRoute();
 
   const ui = /* ui */ {
-    wrapper: "bg-[url('/denver-skyline-sunset.jpg')]",
+    wrapper: "bg-gradient-to-r from-zinc-900",
   };
 
   const links = [
@@ -21,18 +21,23 @@
 </script>
 
 <template>
-  <ULandingHero
-    description="Professional armed security services protecting what matters most with trained professionals and comprehensive solutions."
-    :links
-    :ui
+  <div
+    class="bg-[url('/denver-skyline-sunset.jpg')] bg-right bg-no-repeat bg-cover"
   >
-    <template #title
-      ><h1
-        class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
-      >
-        Protecting Colorado's
-        <span class="text-primary block">Future</span>
-      </h1></template
+    <ULandingHero
+      description="Our mission is to protect what matters most by employing experienced professionals, offering comprehensive training, and maintaining stringent standards to ensure exceptional service for our valued clients"
+      :links
+      :ui
+      orientation="horizontal"
     >
-  </ULandingHero>
+      <template #title
+        ><h1
+          class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
+        >
+          Protecting Colorado's
+          <span class="text-primary block">Future</span>
+        </h1></template
+      >
+    </ULandingHero>
+  </div>
 </template>
