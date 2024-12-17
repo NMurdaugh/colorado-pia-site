@@ -10,6 +10,18 @@
       />
     </template>
     <template #right>
+      <UButton
+        class="hidden md:block"
+        size="lg"
+        label="Emergency Response"
+        to="/emergency"
+      />
+      <UButton
+        class="md:hidden"
+        size="xs"
+        label="Emergency Response"
+        to="/emergency"
+      />
       <UColorModeButton />
     </template>
   </UHeader>
