@@ -12,7 +12,7 @@
       to: "/consultation",
     },
     {
-      label: "Emergency Service",
+      label: "Emergency Response",
       size: "xl",
       to: "/emergency",
       variant: "outline",
