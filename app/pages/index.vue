@@ -3,13 +3,14 @@
   const links = [
     {
       label: "Book a consultation",
-      size: "lg",
+      size: "xl",
       to: "/consultation",
     },
     {
       label: "Emergency Service",
-      size: "lg",
+      size: "xl",
       to: "/emergency",
+      variant: "outline",
     },
   ];
 </script>
