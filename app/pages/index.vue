@@ -4,10 +4,12 @@
     {
       label: "Book a consultation",
       size: "lg",
+      to: "/consultation",
     },
     {
       label: "Emergency Service",
       size: "lg",
+      to: "/emergency",
     },
   ];
 </script>

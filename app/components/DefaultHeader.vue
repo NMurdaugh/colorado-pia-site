@@ -6,7 +6,7 @@
     <template #logo>
       <NuxtImg
         src="/colorado-pia-logo.png"
-        class="w-auto h-20"
+        class="w-auto h-16 md:h-20"
       />
     </template>
     <template #right>
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-  const ui = /* ui */ { wrapper: "py-6" };
+  const ui = /* ui */ { wrapper: "py-2 md:py-6" };
 
   const links = [
     {
