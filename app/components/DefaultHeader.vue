@@ -38,8 +38,8 @@
       to: "/services",
       children: [
         {
-          label: "Corporate",
-          to: "/corporate-security",
+          label: "Workplace Violence Prevention",
+          to: "/workplace-security",
         },
         {
           label: "Schools",
