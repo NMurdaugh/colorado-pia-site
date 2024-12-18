@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const route = useRoute();
 
-  const ui = /* ui */ {
+  const ui = /*ui*/ {
     wrapper: "bg-gradient-to-r from-zinc-900",
   };
 </script>
