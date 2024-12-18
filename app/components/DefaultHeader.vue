@@ -14,6 +14,7 @@
         class="hidden md:inline"
         size="lg"
         color="red"
+        variant="outline"
         label="Emergency Response"
         to="/emergency"
       />
@@ -21,6 +22,7 @@
         class="md:hidden"
         size="xs"
         color="red"
+        variant="outline"
         label="Emergency Response"
         to="/emergency"
       />
