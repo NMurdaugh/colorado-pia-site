@@ -11,14 +11,16 @@
     </template>
     <template #right>
       <UButton
-        class="hidden md:block"
+        class="hidden md:inline"
         size="lg"
+        color="red"
         label="Emergency Response"
         to="/emergency"
       />
       <UButton
         class="md:hidden"
         size="xs"
+        color="red"
         label="Emergency Response"
         to="/emergency"
       />
