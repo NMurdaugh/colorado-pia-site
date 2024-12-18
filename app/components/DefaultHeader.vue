@@ -4,10 +4,16 @@
     :ui
   >
     <template #logo>
-      <NuxtImg
-        src="/colorado-pia-logo.png"
-        class="w-auto h-16 md:h-20"
-      />
+      <div class="flex items-center space-x-4">
+        <NuxtImg
+          src="/colorado-pia-logo.png"
+          class="w-auto h-16 md:h-20"
+        />
+        <div class="hidden md:inline flex-col `items-start">
+          <p>Colorado Protection and</p>
+          <p>Investigation Agency</p>
+        </div>
+      </div>
     </template>
     <template #right>
       <UButton
