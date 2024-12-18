@@ -12,7 +12,6 @@
     class="bg-[url('/denver-skyline-sunset.jpg')] bg-right bg-no-repeat bg-cover"
   >
     <ULandingHero
-      description="Our mission is to protect what matters most by employing experienced professionals, offering comprehensive training, and maintaining stringent standards to ensure exceptional service for our valued clients"
       :ui
       orientation="horizontal"
     >
@@ -24,6 +23,14 @@
           <span class="text-primary block">Future</span>
         </h1></template
       >
+      <template #description>
+        <p class="text-xl max-w-lg">
+          Our mission is to protect what matters most by employing experienced
+          professionals, offering comprehensive training, and maintaining
+          stringent standards to ensure exceptional service for our valued
+          clients.
+        </p>
+      </template>
       <template #links>
         <UButton
           id="mobile-cta"
