@@ -53,7 +53,7 @@
           label="Emergency Response"
           to="/emergency"
           size="xl"
-          color="red"
+          color="brightred"
           variant="outline"
           block
         />
@@ -63,7 +63,7 @@
           label="Emergency Response"
           to="/emergency"
           size="xl"
-          color="red"
+          color="brightred"
           variant="outline"
         />
       </template>

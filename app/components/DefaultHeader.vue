@@ -13,7 +13,7 @@
       <UButton
         class="hidden md:inline"
         size="lg"
-        color="red"
+        color="brightred"
         variant="outline"
         label="Emergency Response"
         to="/emergency"
@@ -21,7 +21,7 @@
       <UButton
         class="md:hidden"
         size="xs"
-        color="red"
+        color="brightred"
         variant="outline"
         label="Emergency Response"
         to="/emergency"
