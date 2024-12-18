@@ -27,7 +27,6 @@
   >
     <ULandingHero
       description="Our mission is to protect what matters most by employing experienced professionals, offering comprehensive training, and maintaining stringent standards to ensure exceptional service for our valued clients"
-      :links
       :ui
       orientation="horizontal"
     >
@@ -39,6 +38,42 @@
           <span class="text-primary block">Future</span>
         </h1></template
       >
+      <template #links>
+        <UButton
+          id="mobile-cta"
+          class="md:hidden"
+          label="Book a consultation"
+          to="/consultation"
+          size="xl"
+          block
+        />
+        <UButton
+          id="desktop-cta"
+          class="hidden md:inline"
+          label="Book a consultation"
+          to="/consultation"
+          size="xl"
+        />
+        <UButton
+          id="mobile-emergency"
+          class="md:hidden"
+          label="Emergency Response"
+          to="/emergency"
+          size="xl"
+          color="red"
+          variant="outline"
+          block
+        />
+        <UButton
+          id="desktop-emergency"
+          class="hidden md:inline"
+          label="Emergency Response"
+          to="/emergency"
+          size="xl"
+          color="red"
+          variant="outline"
+        />
+      </template>
     </ULandingHero>
   </div>
 </template>
