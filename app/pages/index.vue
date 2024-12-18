@@ -22,6 +22,7 @@
 
 <template>
   <div
+    id="hero-background"
     class="bg-[url('/denver-skyline-sunset.jpg')] bg-right bg-no-repeat bg-cover"
   >
     <ULandingHero
