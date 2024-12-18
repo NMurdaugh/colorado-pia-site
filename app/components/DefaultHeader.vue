@@ -26,7 +26,7 @@
         label="Emergency Response"
         to="/emergency"
       />
-      <UColorModeButton />
+      <!-- <UColorModeButton /> -->
     </template>
   </UHeader>
 </template>
