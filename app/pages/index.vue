@@ -4,20 +4,6 @@
   const ui = /* ui */ {
     wrapper: "bg-gradient-to-r from-zinc-900",
   };
-
-  const links = [
-    {
-      label: "Book a consultation",
-      size: "xl",
-      to: "/consultation",
-    },
-    {
-      label: "Emergency Response",
-      size: "xl",
-      to: "/emergency",
-      variant: "outline",
-    },
-  ];
 </script>
 
 <template>
