@@ -1,5 +1,10 @@
 <script setup lang="ts">
   const route = useRoute();
+
+  useHead({
+    title: "Home",
+  });
+
   const highlighted_words: string[] = [
     "businesses",
     "schools",
