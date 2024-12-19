@@ -9,6 +9,6 @@
 
 <script setup>
   useHead({
-    titleTemplate: "%s - Nicholas Murdaugh",
+    titleTemplate: "%s - Colorado PIA",
   });
 </script>
