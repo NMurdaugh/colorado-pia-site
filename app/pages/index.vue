@@ -37,12 +37,16 @@
           class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
         >
           Protecting Colorado's
-
-          <span
-            class="text-primary block"
-            :key="current_word"
-            >{{ current_word }}</span
+          <Transition
+            name="translate-fade"
+            mode="out-in"
           >
+            <span
+              class="text-primary block"
+              :key="current_word"
+              >{{ current_word }}</span
+            >
+          </Transition>
         </h1></template
       >
       <template #description>
@@ -92,3 +96,23 @@
     </ULandingHero>
   </div>
 </template>
+
+<style scoped>
+  .translate-fade-enter-active {
+    transition: opacity 0.5s ease 0.25s, transform 0.5s ease 0.25s;
+  }
+
+  .translate-fade-leave-active {
+    transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
+  }
+
+  .translate-fade-enter-from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+
+  .translate-fade-leave-to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+</style>
