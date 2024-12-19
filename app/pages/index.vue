@@ -1,5 +1,8 @@
 <script setup lang="ts">
   const route = useRoute();
+  const { data: page } = await useAsyncData("index", () =>
+    queryContent("/").findOne()
+  );
 
   useHead({
     title: "Home",
@@ -80,6 +83,19 @@
       </template>
     </ULandingHero>
   </div>
+  <ULandingSection
+    v-if="page"
+    :title="page.services_section.title"
+  >
+    <ULandingGrid>
+      <LazyULandingCard
+        class="col-span-6 row-span-4"
+        v-for="service in page.services_section.services"
+        :key="service.title"
+        v-bind="service"
+      />
+    </ULandingGrid>
+  </ULandingSection>
 </template>
 
 <style scoped></style>

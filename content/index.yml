@@ -1,0 +1,12 @@
+services_section:
+  title: Protection Services
+  description:
+  services:
+    - title: Workplace Violence Prevention
+      description: Comprehensive strategies to prevent and respond to workplace incidents.
+    - title: School Security
+      description: Protecting educational environments with specialized security protocols.
+    - title: Religious Institution Security
+      description: Sensitive security solutions for religious institutions.
+    - title: Individual Protection
+      description: Bespoke solutions for high net worth individuals.
