@@ -3,12 +3,13 @@
   const highlighted_words: string[] = [
     "businesses",
     "schools",
-    "places of worship",
+    "religious institutions",
     "future",
   ];
 
   const ui = /*ui*/ {
     wrapper: "bg-gradient-to-r from-zinc-900",
+    container: "lg:grid-cols-1",
   };
 </script>
 
@@ -25,8 +26,8 @@
         ><h1
           class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
         >
-          Protecting Colorado's
-          <HomeHighlightedWord :word_list="highlighted_words" /></h1
+          Protecting <br />
+          Colorado's <HomeHighlightedWord :word_list="highlighted_words" /></h1
       ></template>
       <template #description>
         <p class="text-xl max-w-lg">

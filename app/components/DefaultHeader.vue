@@ -56,8 +56,8 @@
           to: "/school-security",
         },
         {
-          label: "Places of Worship",
-          to: "/worship-security",
+          label: "Religious Institutions",
+          to: "/religious-security",
         },
         {
           label: "Ultra High Networth Individuals",
