@@ -89,6 +89,7 @@
   >
     <ULandingGrid>
       <LazyULandingCard
+        orientation="horizontal"
         :ui="{
           background: 'dark:bg-gray-800',
           wrapper: 'dark:ring-gray-700',
@@ -98,7 +99,13 @@
         v-for="service in page.services_section.services"
         :key="service.title"
         v-bind="service"
-      />
+      >
+        <NuxtImg
+          v-if="service.img_source"
+          :src="service.img_source"
+          class="w-full rounded-md"
+        />
+      </LazyULandingCard>
     </ULandingGrid>
   </ULandingSection>
 </template>

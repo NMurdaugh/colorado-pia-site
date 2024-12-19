@@ -4,13 +4,23 @@ services_section:
   services:
     - title: Workplace Violence Prevention
       description: Comprehensive strategies to prevent and respond to workplace incidents.
+      to: /workplace-security
       icon: i-heroicons:building-office
+      color: blue
+      img_source: /corporate_security_checkpoint.jpg
     - title: School Security
       description: Protecting educational environments with specialized security protocols.
+      to: /school-security
       icon: i-heroicons:academic-cap
+      img_source: /safe_children.jpg
     - title: Religious Institution Security
       description: Sensitive security solutions for religious institutions.
+      to: /religious-security
       icon: i-mdi:church-outline
+      img_source: /smiling_church_small_group.jpg
     - title: Individual Protection
       description: Bespoke solutions for high net worth individuals.
+      to: /high-networth-security
       icon: i-dashicons:businessman
+      color: blue
+      img_source: /man_opening_car_door.jpg
