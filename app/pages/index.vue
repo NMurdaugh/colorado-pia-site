@@ -100,9 +100,11 @@
         :key="service.title"
         v-bind="service"
       >
-        <NuxtImg
+        <NuxtPicture
           v-if="service.img_source"
           :src="service.img_source"
+          :alt="service.title"
+          format="avif,webp"
           class="w-full rounded-md"
         />
       </LazyULandingCard>
