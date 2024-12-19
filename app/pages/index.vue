@@ -86,6 +86,7 @@
   <ULandingSection
     v-if="page"
     :title="page.services_section.title"
+    :description="page.services_section.description"
   >
     <ULandingGrid>
       <LazyULandingCard
