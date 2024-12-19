@@ -89,6 +89,11 @@
   >
     <ULandingGrid>
       <LazyULandingCard
+        :ui="{
+          background: 'dark:bg-gray-800',
+          wrapper: 'dark:ring-gray-700',
+          shadow: 'dark:shadow-gray-950 dark:shadow-lg',
+        }"
         class="col-span-6 row-span-4"
         v-for="service in page.services_section.services"
         :key="service.title"
