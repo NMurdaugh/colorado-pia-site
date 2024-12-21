@@ -16,7 +16,6 @@
   ];
 
   const ui = /*ui*/ {
-    wrapper: "bg-gradient-to-r from-zinc-900",
     container: "lg:grid-cols-1",
   };
 </script>
@@ -24,21 +23,25 @@
 <template>
   <div
     id="hero-background"
-    class="bg-[url('/denver-skyline-sunset.jpg')] bg-right bg-no-repeat bg-cover"
+    class="bg-[url('/denver-skyline-sunset.jpg')] bg-right bg-no-repeat bg-cover relative"
   >
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
+    ></div>
     <ULandingHero
       :ui
       orientation="horizontal"
+      class="relative animate-fade-in"
     >
       <template #title
         ><h1
-          class="text-4xl sm:text-5xl font-extrabold tracking-tight dark:text-white text-black lg:text-7xl"
+          class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
         >
           Protecting <br />
           Colorado's <HomeHighlightedWord :word_list="highlighted_words" /></h1
       ></template>
       <template #description>
-        <p class="text-xl max-w-lg">
+        <p class="text-xl max-w-lg text-gray-100 drop-shadow-md font-medium">
           Our mission is to protect what matters most by employing experienced
           professionals, offering comprehensive training, and maintaining
           stringent standards to ensure exceptional service for our valued
@@ -48,7 +51,7 @@
       <template #links>
         <UButton
           id="mobile-cta"
-          class="md:hidden"
+          class="md:hidden transform transition-all duration-300 hover:scale-105"
           label="Book a consultation"
           to="/consultation"
           size="xl"
@@ -56,14 +59,14 @@
         />
         <UButton
           id="desktop-cta"
-          class="hidden md:inline"
+          class="hidden md:inline transform transition-all duration-300 hover:scale-105"
           label="Book a consultation"
           to="/consultation"
           size="xl"
         />
         <UButton
           id="mobile-emergency"
-          class="md:hidden"
+          class="md:hidden transform transition-all duration-300 hover:scale-105"
           label="Emergency Response"
           to="/emergency"
           size="xl"
@@ -73,7 +76,7 @@
         />
         <UButton
           id="desktop-emergency"
-          class="hidden md:inline"
+          class="hidden md:inline transform transition-all duration-300 hover:scale-105"
           label="Emergency Response"
           to="/emergency"
           size="xl"
@@ -118,4 +121,19 @@
   </ULandingSection>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
