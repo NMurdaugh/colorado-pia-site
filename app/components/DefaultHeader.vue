@@ -60,7 +60,7 @@
           to: "/religious-security",
         },
         {
-          label: "High ProfileIndividuals",
+          label: "High Profile Individuals",
           to: "/high-profile-security",
         },
       ],
