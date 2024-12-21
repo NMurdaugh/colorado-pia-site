@@ -41,11 +41,7 @@
 </template>
 
 <script setup lang="ts">
-interface NavLink {
-  label: string;
-  to: string;
-  children?: NavLink[];
-}
+import { headerLinks } from '~/data/navigation'
 
 const ui = {
   wrapper: "py-2 md:py-6",
@@ -57,38 +53,7 @@ const ui = {
   }
 };
 
-const links: NavLink[] = [
-  {
-    label: "Protection Services",
-    to: "/services",
-    children: [
-      {
-        label: "Workplace Violence Prevention",
-        to: "/workplace-security",
-      },
-      {
-        label: "Schools",
-        to: "/school-security",
-      },
-      {
-        label: "Religious Institutions",
-        to: "/religious-security",
-      },
-      {
-        label: "High Profile Individuals",
-        to: "/high-profile-security",
-      },
-    ],
-  },
-  {
-    label: "Training",
-    to: "/training",
-  },
-  {
-    label: "About Us",
-    to: "/about",
-  },
-];
+const links = headerLinks;
 </script>
 
 <style scoped>
