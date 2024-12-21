@@ -87,16 +87,19 @@
     v-if="page"
     :title="page.services_section.title"
     :description="page.services_section.description"
+    class="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
   >
-    <ULandingGrid>
+    <ULandingGrid class="gap-8">
       <LazyULandingCard
         orientation="horizontal"
         :ui="{
-          background: 'dark:bg-gray-800',
-          wrapper: 'dark:ring-gray-700',
-          shadow: 'dark:shadow-gray-950 dark:shadow-lg',
+          background: 'dark:bg-gray-800 backdrop-blur-sm',
+          wrapper:
+            'dark:ring-gray-700 hover:ring-2 transition-all duration-300',
+          shadow:
+            'dark:shadow-gray-950/50 hover:shadow-xl transition-shadow duration-300',
         }"
-        class="col-span-6 row-span-4"
+        class="col-span-6 row-span-4 transform hover:-translate-y-1 transition-transform duration-300"
         v-for="service in page.services_section.services"
         :key="service.title"
         v-bind="service"
