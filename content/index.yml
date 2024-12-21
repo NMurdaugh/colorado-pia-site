@@ -1,25 +1,25 @@
 services_section:
-  title: Specialized Security Services
-  description: Tailored Solutions for Your Unique Security Needs
+  title: Expert Security Solutions
+  description: Protecting What Matters Most with Professional Excellence
   services:
     - title: Workplace Violence Prevention
-      description: Comprehensive strategies to prevent and respond to workplace incidents.
+      description: Advanced threat assessment and prevention strategies to create safer workplaces. Our proven protocols help protect your employees and assets.
       to: /workplace-security
       icon: i-heroicons:building-office
       color: blue
       img_source: /corporate_security_checkpoint.jpg
     - title: School Security
-      description: Protecting educational environments with specialized security protocols.
+      description: Comprehensive security solutions designed specifically for educational institutions. We help create safe learning environments where students can thrive.
       to: /school-security
       icon: i-heroicons:academic-cap
       img_source: /safe_children.jpg
     - title: Religious Institution Security
-      description: Sensitive security solutions for religious institutions.
+      description: Discreet and respectful security measures that preserve the sanctity of worship while ensuring the safety of your congregation.
       to: /religious-security
       icon: i-mdi:church-outline
       img_source: /smiling_church_small_group.jpg
     - title: Individual Protection
-      description: Bespoke solutions for high net worth individuals.
+      description: Personalized security services for high-profile individuals. We provide discrete, comprehensive protection tailored to your lifestyle.
       to: /high-networth-security
       icon: i-dashicons:businessman
       color: blue
