@@ -109,6 +109,8 @@
           :src="service.img_source"
           :alt="service.title"
           format="avif,webp"
+          width="800"
+          height="600"
           class="w-full rounded-md"
         />
       </LazyULandingCard>
