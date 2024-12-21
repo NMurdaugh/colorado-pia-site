@@ -60,8 +60,8 @@
           to: "/religious-security",
         },
         {
-          label: "Ultra High Networth Individuals",
-          to: "/high-networth-security",
+          label: "High ProfileIndividuals",
+          to: "/high-profile-security",
         },
       ],
     },

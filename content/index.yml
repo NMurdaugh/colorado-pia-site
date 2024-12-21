@@ -20,7 +20,7 @@ services_section:
       img_source: /smiling_church_small_group.jpg
     - title: Individual Protection
       description: Personalized security services for high-profile individuals. We provide discrete, comprehensive protection tailored to your lifestyle.
-      to: /high-networth-security
+      to: /high-profile-security
       icon: i-dashicons:businessman
       color: blue
       img_source: /man_opening_car_door.jpg
