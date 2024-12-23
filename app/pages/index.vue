@@ -149,7 +149,7 @@
       }"
       arrows
     >
-      <div class="w-full max-w-3xl mx-auto">
+      <div class="w-full max-w-lg mx-auto">
         <ULandingTestimonial
           v-bind="item"
           card
