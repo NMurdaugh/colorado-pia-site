@@ -139,12 +139,12 @@
       }"
       :prev-button="{
         color: 'gray',
-        icon: 'i-heroicons-arrow-left-20-solid',
+        icon: 'i-heroicons:arrow-left-20-solid',
         class: '-start-12',
       }"
       :next-button="{
         color: 'gray',
-        icon: 'i-heroicons-arrow-right-20-solid',
+        icon: 'i-heroicons:arrow-right-20-solid',
         class: '-end-12',
       }"
       arrows
@@ -168,7 +168,7 @@
                 :key="i"
               >
                 <UIcon
-                  name="i-heroicons-star-solid"
+                  name="i-heroicons:star-solid"
                   class="w-5 h-5"
                 />
               </template>
@@ -178,10 +178,6 @@
           <blockquote
             class="text-lg font-medium italic text-gray-900 dark:text-white"
           >
-            <UIcon
-              name="i-heroicons-quote-left"
-              class="w-8 h-8 text-primary-200 dark:text-primary-800 absolute -left-4 -top-4 opacity-50"
-            />
             "{{ item.content }}"
           </blockquote>
 
