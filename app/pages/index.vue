@@ -124,12 +124,12 @@
   </ULandingSection>
   <ULandingSection
     v-if="page"
-    :title="page.testimonials_section.title"
-    :description="page.testimonials_section.description"
+    :title="page.testimonials.title"
+    :description="page.testimonials.description"
     class="py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900"
   >
     <UCarousel
-      :items="page.testimonials_section.testimonials"
+      :items="page.testimonials.items"
       v-slot="{ item }"
       class="px-4 sm:px-6 lg:px-8"
       :ui="{
@@ -139,65 +139,23 @@
       }"
       :prev-button="{
         color: 'gray',
-        icon: 'i-heroicons:arrow-left-20-solid',
+        icon: 'i-heroicons-arrow-left-20-solid',
         class: '-start-12',
       }"
       :next-button="{
         color: 'gray',
-        icon: 'i-heroicons:arrow-right-20-solid',
+        icon: 'i-heroicons-arrow-right-20-solid',
         class: '-end-12',
       }"
       arrows
     >
       <div class="w-full max-w-3xl mx-auto">
-        <UCard
-          :ui="{
-            base: 'backdrop-blur-sm transition-all duration-300 hover:ring-2 dark:ring-gray-700',
-            body: {
-              base: 'flex flex-col gap-4',
-            },
-            header: {
-              base: 'pb-0',
-            },
-          }"
-        >
-          <template #header>
-            <div class="flex items-center gap-2 text-primary-500">
-              <template
-                v-for="i in item.rating"
-                :key="i"
-              >
-                <UIcon
-                  name="i-heroicons:star-solid"
-                  class="w-5 h-5"
-                />
-              </template>
-            </div>
-          </template>
-
-          <blockquote
-            class="text-lg font-medium italic text-gray-900 dark:text-white"
-          >
-            "{{ item.content }}"
-          </blockquote>
-
-          <div class="flex items-center gap-4 mt-4">
-            <UAvatar
-              :src="`https://api.dicebear.com/7.x/initials/svg?seed=${item.author}`"
-              :alt="item.author"
-              size="lg"
-              class="ring-2 ring-primary-500/20"
-            />
-            <div>
-              <div class="font-semibold text-gray-900 dark:text-white">
-                {{ item.author }}
-              </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">
-                {{ item.role }} at {{ item.organization }}
-              </div>
-            </div>
-          </div>
-        </UCard>
+        <ULandingTestimonial
+          :author="item.author"
+          :title="item.author.description"
+          :quote="item.quote"
+          :avatar="item.author.avatar.src"
+        />
       </div>
     </UCarousel>
   </ULandingSection>
