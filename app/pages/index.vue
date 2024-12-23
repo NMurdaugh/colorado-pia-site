@@ -126,7 +126,7 @@
     v-if="page"
     :title="page.testimonials_section.title"
     :description="page.testimonials_section.description"
-    class="py-16 bg-gray-50 dark:bg-gray-900"
+    class="py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900"
   >
     <UCarousel
       :items="page.testimonials_section.testimonials"
@@ -156,6 +156,9 @@
             body: {
               base: 'flex flex-col gap-4',
             },
+            header: {
+              base: 'pb-0',
+            },
           }"
         >
           <template #header>
@@ -175,6 +178,10 @@
           <blockquote
             class="text-lg font-medium italic text-gray-900 dark:text-white"
           >
+            <UIcon
+              name="i-heroicons-quote-left"
+              class="w-8 h-8 text-primary-200 dark:text-primary-800 absolute -left-4 -top-4 opacity-50"
+            />
             "{{ item.content }}"
           </blockquote>
 
@@ -183,6 +190,7 @@
               :src="`https://api.dicebear.com/7.x/initials/svg?seed=${item.author}`"
               :alt="item.author"
               size="lg"
+              class="ring-2 ring-primary-500/20"
             />
             <div>
               <div class="font-semibold text-gray-900 dark:text-white">
