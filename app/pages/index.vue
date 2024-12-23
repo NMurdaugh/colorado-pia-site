@@ -151,10 +151,8 @@
     >
       <div class="w-full max-w-3xl mx-auto">
         <ULandingTestimonial
-          :author="item.author"
-          :title="item.author.description"
-          :quote="item.quote"
-          :avatar="item.author.avatar.src"
+          v-bind="item"
+          card
         />
       </div>
     </UCarousel>
