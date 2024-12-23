@@ -22,3 +22,28 @@ services_section:
       to: /high-profile-security
       icon: i-dashicons:businessman
       img_source: /man_opening_car_door.jpg
+
+testimonials_section:
+  title: What Our Clients Say
+  description: Trust built through excellence in security services
+  testimonials:
+    - author: Sarah Thompson
+      role: School Principal
+      organization: Denver Academy
+      content: "The professionalism and dedication of Colorado PIA have transformed our school's security infrastructure. Their team's attention to detail and proactive approach gives our staff and parents peace of mind."
+      rating: 5
+    - author: Michael Chen
+      role: CEO
+      organization: Tech Innovations Corp
+      content: "Colorado PIA's workplace security solutions are second to none. Their team's expertise in threat assessment and prevention has made our employees feel safer and more secure."
+      rating: 5
+    - author: Rev. James Wilson
+      role: Senior Pastor
+      organization: Grace Community Church
+      content: "Their understanding of our unique needs as a religious institution has been invaluable. They provide security with respect and discretion, allowing our congregation to worship in peace."
+      rating: 5
+    - author: Dr. Amanda Rodriguez
+      role: Chief of Operations
+      organization: Colorado Medical Center
+      content: "From risk assessment to implementation, Colorado PIA has exceeded our expectations. Their team's commitment to excellence shows in every aspect of their service."
+      rating: 5
