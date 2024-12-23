@@ -23,27 +23,31 @@ services_section:
       icon: i-dashicons:businessman
       img_source: /man_opening_car_door.jpg
 
-testimonials_section:
+testimonials:
   title: What Our Clients Say
-  description: Trusted by Colorado's leading organizations to deliver consistent excellence in service.
-  testimonials:
-    - author: Sarah Thompson
-      role: School Principal
-      organization: Denver Academy
-      content: "The professionalism and dedication of Colorado PIA have transformed our school's security infrastructure. Their team's attention to detail and proactive approach gives our staff and parents peace of mind."
-      rating: 5
-    - author: Michael Chen
-      role: CEO
-      organization: Tech Innovations Corp
-      content: "Colorado PIA's workplace security solutions are second to none. Their team's expertise in threat assessment and prevention has made our employees feel safer and more secure."
-      rating: 5
-    - author: Rev. James Wilson
-      role: Senior Pastor
-      organization: Grace Community Church
-      content: "Their understanding of our unique needs as a religious institution has been invaluable. They provide security with respect and discretion, allowing our congregation to worship in peace."
-      rating: 5
-    - author: Dr. Amanda Rodriguez
-      role: Chief of Operations
-      organization: Colorado Medical Center
-      content: "From risk assessment to implementation, Colorado PIA has exceeded our expectations. Their team's commitment to excellence shows in every aspect of their service."
-      rating: 5
+  description: Trusted by Colorado's leading organizations to deliver excellence in protection services.
+  items:
+    - quote: The professionalism of Colorado PIA has transformed our school's security. Their proactive approach gives our staff and parents true peace of mind.
+      author:
+        name: Sarah Thompson
+        description: School Principal at Denver Academy
+        avatar:
+          src: https://api.dicebear.com/7.x/initials/svg?seed=Sarah%20Thompson
+    - quote: Their expertise in workplace security is unmatched. Our employees feel safer and more secure with Colorado PIA's comprehensive protection.
+      author:
+        name: Michael Chen
+        description: CEO at Tech Innovations Corp
+        avatar:
+          src: https://api.dicebear.com/7.x/initials/svg?seed=Michael%20Chen
+    - quote: They understand our unique needs perfectly. Their respectful and discrete security allows our congregation to worship without worry.
+      author:
+        name: Rev. James Wilson
+        description: Senior Pastor at Grace Community Church
+        avatar:
+          src: https://api.dicebear.com/7.x/initials/svg?seed=James%20Wilson
+    - quote: From assessment to implementation, Colorado PIA exceeds expectations. Their dedication to excellence is evident in every aspect of service.
+      author:
+        name: Dr. Amanda Rodriguez
+        description: Chief of Operations at Colorado Medical Center
+        avatar:
+          src: https://api.dicebear.com/7.x/initials/svg?seed=Amanda%20Rodriguez
