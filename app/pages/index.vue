@@ -101,6 +101,9 @@
             'dark:ring-gray-700 hover:ring-2 transition-all duration-300',
           shadow:
             'dark:shadow-gray-950/50 hover:shadow-xl transition-shadow duration-300',
+          icon: {
+            base: 'dark:text-primary',
+          },
         }"
         class="col-span-6 row-span-4 transform hover:-translate-y-1 transition-transform duration-300"
         v-for="service in page.services_section.services"
