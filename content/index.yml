@@ -6,7 +6,6 @@ services_section:
       description: Advanced threat assessment and prevention strategies to create safer workplaces. Our proven protocols help protect your employees and assets.
       to: /workplace-security
       icon: i-heroicons:building-office
-      color: blue
       img_source: /corporate_security_checkpoint.jpg
     - title: School Security
       description: Comprehensive security solutions designed specifically for educational institutions. We help create safe learning environments where students can thrive.
@@ -22,5 +21,4 @@ services_section:
       description: Personalized security services for high-profile individuals. We provide discrete, comprehensive protection tailored to your lifestyle.
       to: /high-profile-security
       icon: i-dashicons:businessman
-      color: blue
       img_source: /man_opening_car_door.jpg

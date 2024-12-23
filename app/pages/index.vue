@@ -96,7 +96,7 @@
       <LazyULandingCard
         orientation="horizontal"
         :ui="{
-          background: 'dark:bg-gray-800 backdrop-blur-sm',
+          background: 'backdrop-blur-sm',
           wrapper:
             'dark:ring-gray-700 hover:ring-2 transition-all duration-300',
           shadow:
