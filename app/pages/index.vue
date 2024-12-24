@@ -35,7 +35,7 @@
     >
       <template #title
         ><h1
-          class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
+          class="text-4xl sm:text-5xl overflow-hidden font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
         >
           Protecting <br />
           Colorado's <HomeHighlightedWord :word_list="highlighted_words" /></h1
