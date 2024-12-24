@@ -164,19 +164,4 @@
       transform: translateY(0);
     }
   }
-
-  /* Add uniform height for testimonial cards on mobile */
-  @media (max-width: 768px) {
-    :deep(.landing-testimonial-card) {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    :deep(.landing-testimonial-card > div) {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-  }
 </style>
