@@ -131,12 +131,14 @@
     <UCarousel
       :items="page.testimonials.items"
       v-slot="{ item }"
-      class="px-4 sm:px-6 lg:px-8"
+      class="px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden"
       :ui="{
-        wrapper: 'relative max-w-5xl mx-auto',
-        item: 'h-full flex-shrink-0 snap-start',
-        container: 'flex items-center',
+        item: 'h-full snap-start basis-full',
+        indicators: {
+          wrapper: 'relative bottom-0 mt-4',
+        },
       }"
+      indicators
     >
       <div class="w-full max-w-lg mx-auto">
         <ULandingTestimonial
@@ -161,6 +163,21 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Add uniform height for testimonial cards on mobile */
+  @media (max-width: 768px) {
+    :deep(.landing-testimonial-card) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    :deep(.landing-testimonial-card > div) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>
