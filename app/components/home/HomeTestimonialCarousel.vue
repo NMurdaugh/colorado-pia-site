@@ -1,6 +1,7 @@
 <template>
   <UCarousel
     :items
+    ref="carouselRef"
     v-slot="{ item }"
     class="px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden"
     :ui="{
@@ -26,6 +27,20 @@
       required: true,
     },
   });
+
+  const carouselRef = ref();
+
+  function carouselCycle() {
+    if (!carouselRef.value) return;
+
+    if (carouselRef.value.page === carouselRef.value.pages) {
+      return carouselRef.value.select(0);
+    }
+
+    carouselRef.value.next();
+  }
+
+  useSetInterval(carouselCycle, 5000);
 </script>
 
 <style></style>
