@@ -128,24 +128,7 @@
     :description="page.testimonials.description"
     class="py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900"
   >
-    <UCarousel
-      :items="page.testimonials.items"
-      v-slot="{ item }"
-      class="px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden"
-      :ui="{
-        item: 'h-full snap-start basis-full',
-        indicators: {
-          wrapper: 'relative bottom-0 mt-4',
-        },
-      }"
-      indicators
-    >
-      <ULandingTestimonial
-        v-bind="item"
-        class="w-full max-w-2xl mx-auto min-h-[13.75rem] md:min-h-max"
-        card
-      />
-    </UCarousel>
+    <HomeTestimonialCarousel :items="page.testimonials.items" />
   </ULandingSection>
 </template>
 
