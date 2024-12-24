@@ -140,12 +140,11 @@
       }"
       indicators
     >
-      <div class="w-full max-w-lg mx-auto">
-        <ULandingTestimonial
-          v-bind="item"
-          card
-        />
-      </div>
+      <ULandingTestimonial
+        v-bind="item"
+        class="w-full max-w-lg mx-auto"
+        card
+      />
     </UCarousel>
   </ULandingSection>
 </template>
@@ -173,7 +172,7 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     :deep(.landing-testimonial-card > div) {
       flex: 1;
       display: flex;
