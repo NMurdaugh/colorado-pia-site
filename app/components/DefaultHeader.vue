@@ -47,7 +47,6 @@
 
   const ui = {
     wrapper: "py-2 md:py-6",
-    container: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
     button: {
       base: "transition-colors duration-200",
       font: "font-medium",
