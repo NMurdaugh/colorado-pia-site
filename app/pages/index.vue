@@ -7,13 +7,6 @@
   useHead({
     title: "Home",
   });
-
-  const highlighted_words: string[] = [
-    "businesses",
-    "schools",
-    "religious institutions",
-    "future",
-  ];
 </script>
 
 <template>
@@ -25,6 +18,7 @@
       class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
     ></div>
     <ULandingHero
+      v-if="page"
       :ui="{
         container: 'lg:grid-cols-1',
       }"
@@ -35,15 +29,15 @@
         ><h1
           class="text-4xl sm:text-5xl overflow-hidden font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
         >
-          Protecting <br />
-          Colorado's <HomeHighlightedWord :word_list="highlighted_words" /></h1
+          {{ page.hero_section.title_static_top }} <br />
+          {{ page.hero_section.title_static_bottom }}
+          <HomeHighlightedWord
+            :word_list="page.hero_section.dynamic_words"
+          /></h1
       ></template>
       <template #description>
         <p class="text-xl max-w-lg text-gray-100 drop-shadow-md font-medium">
-          Our mission is to protect what matters most by employing experienced
-          professionals, offering comprehensive training, and maintaining
-          stringent standards to ensure exceptional service for our valued
-          clients.
+          {{ page.hero_section.description }}
         </p>
       </template>
       <template #links>
