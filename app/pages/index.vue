@@ -142,7 +142,7 @@
     >
       <ULandingTestimonial
         v-bind="item"
-        class="w-full max-w-2xl mx-auto"
+        class="w-full max-w-2xl mx-auto min-h-[13.75rem] md:min-h-max"
         card
       />
     </UCarousel>
