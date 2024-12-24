@@ -137,17 +137,6 @@
         item: 'h-full flex-shrink-0 snap-start',
         container: 'flex items-center',
       }"
-      :prev-button="{
-        color: 'gray',
-        icon: 'i-heroicons-arrow-left-20-solid',
-        class: '-start-12',
-      }"
-      :next-button="{
-        color: 'gray',
-        icon: 'i-heroicons-arrow-right-20-solid',
-        class: '-end-12',
-      }"
-      arrows
     >
       <div class="w-full max-w-lg mx-auto">
         <ULandingTestimonial
