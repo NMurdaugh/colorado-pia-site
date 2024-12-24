@@ -14,10 +14,6 @@
     "religious institutions",
     "future",
   ];
-
-  const ui = /*ui*/ {
-    container: "lg:grid-cols-1",
-  };
 </script>
 
 <template>
@@ -29,7 +25,9 @@
       class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"
     ></div>
     <ULandingHero
-      :ui
+      :ui="{
+        container: 'lg:grid-cols-1',
+      }"
       orientation="horizontal"
       class="relative animate-fade-in"
     >
