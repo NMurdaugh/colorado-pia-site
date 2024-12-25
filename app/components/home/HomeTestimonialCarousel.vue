@@ -15,6 +15,7 @@
     <ULandingTestimonial
       v-bind="item"
       class="w-full max-w-2xl mx-auto min-h-[13.75rem] md:min-h-max"
+      :ui="{ ring: 'ring-0' }"
       card
     />
   </UCarousel>
