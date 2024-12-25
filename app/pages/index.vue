@@ -27,7 +27,7 @@
     >
       <template #title
         ><h1
-          class="text-4xl sm:text-5xl overflow-x-hidden-hidden font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
+          class="text-4xl sm:text-5xl overflow-x-hidden font-extrabold tracking-tight text-white lg:text-7xl drop-shadow-lg"
         >
           {{ page.hero_section.title_static_top }} <br />
           {{ page.hero_section.title_static_bottom }}
