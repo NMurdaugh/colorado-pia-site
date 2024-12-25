@@ -6,6 +6,7 @@
     class="px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden"
     :ui="{
       item: 'h-full snap-start basis-full',
+      container: ' space-x-2',
       indicators: {
         wrapper: 'relative bottom-0 mt-4',
       },
