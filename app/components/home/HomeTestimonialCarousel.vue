@@ -6,6 +6,7 @@
     class="px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden"
     :ui="{
       item: 'h-full snap-start basis-full',
+      container: ' space-x-2',
       indicators: {
         wrapper: 'relative bottom-0 mt-4',
       },
@@ -15,6 +16,7 @@
     <ULandingTestimonial
       v-bind="item"
       class="w-full max-w-2xl mx-auto min-h-[13.75rem] md:min-h-max"
+      :ui="{ ring: 'ring-0' }"
       card
     />
   </UCarousel>
