@@ -65,3 +65,7 @@ testimonials:
         description: Chief of Operations at Colorado Medical Center
         avatar:
           src: https://api.dicebear.com/7.x/initials/svg?seed=Amanda%20Rodriguez
+
+contact_section:
+  title: Get in Touch
+  description: We're here to help. Reach out to us for any inquiries or to schedule a consultation.

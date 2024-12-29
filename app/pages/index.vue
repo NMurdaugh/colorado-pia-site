@@ -67,6 +67,14 @@
   >
     <HomeTestimonialCarousel :items="page.testimonials.items" />
   </ULandingSection>
+  <ULandingSection
+    v-if="page"
+    :title="page.contact_section.title"
+    :description="page.contact_section.description"
+    class="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+  >
+    <HomeContactForm />
+  </ULandingSection>
 </template>
 
 <style scoped>
