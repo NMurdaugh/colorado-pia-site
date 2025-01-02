@@ -10,6 +10,7 @@
       <UInput
         v-model="form.name"
         placeholder="Your name"
+        icon="i-material-symbols:person-outline"
         :ui
         required
       />
@@ -23,6 +24,7 @@
         v-model="form.email"
         type="email"
         placeholder="your.email@example.com"
+        icon="i-ic:outline-email"
         :ui
         required
       />
@@ -36,6 +38,7 @@
         v-model="form.phone"
         type="tel"
         placeholder="(555) 555-5555"
+        icon="i-ic:outline-phone"
         :ui
       />
     </UFormGroup>
