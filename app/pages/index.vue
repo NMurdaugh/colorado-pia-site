@@ -73,7 +73,7 @@
     :description="page.contact_section.description"
     class="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
   >
-    <HomeContactForm />
+    <ContactForm />
   </ULandingSection>
 </template>
 
