@@ -52,6 +52,7 @@
         placeholder="How can we help you?"
         :ui
         :rows="4"
+        autoresize
         required
       />
     </UFormGroup>
