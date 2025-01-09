@@ -1,6 +1,8 @@
 <template>
-  <form
-    @submit.prevent="handleSubmit"
+  <UForm
+    :schema
+    :state
+    @submit.prevent="onSubmit"
     class="max-w-2xl min-w-[500px] mx-auto space-y-6"
   >
     <UFormGroup
@@ -8,11 +10,10 @@
       name="name"
     >
       <UInput
-        v-model="form.name"
+        v-model="state.name"
         placeholder="Your name"
         icon="i-material-symbols:person-outline"
         :ui
-        required
       />
     </UFormGroup>
 
@@ -21,12 +22,11 @@
       name="email"
     >
       <UInput
-        v-model="form.email"
+        v-model="state.email"
         type="email"
         placeholder="your.email@example.com"
         icon="i-ic:outline-email"
         :ui
-        required
       />
     </UFormGroup>
 
@@ -35,7 +35,7 @@
       name="phone"
     >
       <UInput
-        v-model="form.phone"
+        v-model="state.phone"
         type="tel"
         placeholder="(555) 555-5555"
         icon="i-ic:outline-phone"
@@ -48,12 +48,11 @@
       name="message"
     >
       <UTextarea
-        v-model="form.message"
+        v-model="state.message"
         placeholder="How can we help you?"
         :ui
         :rows="4"
         autoresize
-        required
       />
     </UFormGroup>
 
@@ -69,68 +68,85 @@
       </UButton>
     </div>
 
-    <UNotification
+    <!-- <UNotification
       v-if="notification.show"
       :type="notification.type"
       :id="1"
       :timeout="5000"
       :description="notification.message"
       class="mt-4"
-    />
-  </form>
+    /> -->
+  </UForm>
 </template>
 
 <script setup lang="ts">
+  import type { FormSubmitEvent } from "#ui/types";
+  import * as yup from "yup";
+  import "yup-phone-lite";
+
   const ui = { input: "dark:bg-gray-800" };
 
-  const form = ref({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+  const schema = yup.object({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    phone: yup.string().phone("US").required(),
+    message: yup.string().required(),
   });
+
+  type Schema = yup.InferType<typeof schema>;
+
+  const state = reactive({
+    name: undefined,
+    email: undefined,
+    phone: undefined,
+    message: undefined,
+  });
+
+  async function onSubmit(event: FormSubmitEvent<Schema>) {
+    console.log(event);
+  }
 
   const loading = ref(false);
-  const notification = ref({
-    show: false,
-    type: "success",
-    message: "",
-  });
+  // const notification = ref({
+  //   show: false,
+  //   type: "success",
+  //   message: "",
+  // });
 
-  const handleSubmit = async () => {
-    loading.value = true;
+  // const onSubmit = async (event: FormSubmitEvent<Schema>) => {
+  //   loading.value = true;
 
-    try {
-      // Here you would typically make an API call to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+  //   try {
+  //     // Here you would typically make an API call to your backend
+  //     // For now, we'll simulate a successful submission
+  //     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      notification.value = {
-        show: true,
-        type: "success",
-        message: "Thank you for your message! We will get back to you soon.",
-      };
+  //     notification.value = {
+  //       show: true,
+  //       type: "success",
+  //       message: "Thank you for your message! We will get back to you soon.",
+  //     };
 
-      // Reset form
-      form.value = {
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      };
-    } catch (error) {
-      notification.value = {
-        show: true,
-        type: "error",
-        message: "There was an error sending your message. Please try again.",
-      };
-    } finally {
-      loading.value = false;
+  //     // Reset form
+  //     form.value = {
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       message: "",
+  //     };
+  //   } catch (error) {
+  //     notification.value = {
+  //       show: true,
+  //       type: "error",
+  //       message: "There was an error sending your message. Please try again.",
+  //     };
+  //   } finally {
+  //     loading.value = false;
 
-      // Hide notification after 5 seconds
-      setTimeout(() => {
-        notification.value.show = false;
-      }, 5000);
-    }
-  };
+  //     // Hide notification after 5 seconds
+  //     setTimeout(() => {
+  //       notification.value.show = false;
+  //     }, 5000);
+  //   }
+  // };
 </script>
