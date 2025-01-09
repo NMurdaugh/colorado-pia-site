@@ -3,7 +3,7 @@
     :schema
     :state
     @submit.prevent="onSubmit"
-    class="max-w-2xl min-w-[500px] mx-auto space-y-6"
+    class="max-w-2xl lg:min-w-[500px] mx-auto space-y-6"
   >
     <UFormGroup
       label="Full Name"
