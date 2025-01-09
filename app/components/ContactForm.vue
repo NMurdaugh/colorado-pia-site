@@ -67,15 +67,6 @@
         {{ loading ? "Sending..." : "Send Message" }}
       </UButton>
     </div>
-
-    <!-- <UNotification
-      v-if="notification.show"
-      :type="notification.type"
-      :id="1"
-      :timeout="5000"
-      :description="notification.message"
-      class="mt-4"
-    /> -->
   </UForm>
 </template>
 
@@ -107,46 +98,4 @@
   }
 
   const loading = ref(false);
-  // const notification = ref({
-  //   show: false,
-  //   type: "success",
-  //   message: "",
-  // });
-
-  // const onSubmit = async (event: FormSubmitEvent<Schema>) => {
-  //   loading.value = true;
-
-  //   try {
-  //     // Here you would typically make an API call to your backend
-  //     // For now, we'll simulate a successful submission
-  //     await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  //     notification.value = {
-  //       show: true,
-  //       type: "success",
-  //       message: "Thank you for your message! We will get back to you soon.",
-  //     };
-
-  //     // Reset form
-  //     form.value = {
-  //       name: "",
-  //       email: "",
-  //       phone: "",
-  //       message: "",
-  //     };
-  //   } catch (error) {
-  //     notification.value = {
-  //       show: true,
-  //       type: "error",
-  //       message: "There was an error sending your message. Please try again.",
-  //     };
-  //   } finally {
-  //     loading.value = false;
-
-  //     // Hide notification after 5 seconds
-  //     setTimeout(() => {
-  //       notification.value.show = false;
-  //     }, 5000);
-  //   }
-  // };
 </script>
