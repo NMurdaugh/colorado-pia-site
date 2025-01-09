@@ -72,19 +72,19 @@
 
 <script setup lang="ts">
   import type { Form, FormSubmitEvent } from "#ui/types";
-  import * as yup from "yup";
+  import { object, string, type InferType } from "yup";
   import "yup-phone-lite";
 
   const ui = { input: "dark:bg-gray-800" };
 
-  const schema = yup.object({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    phone: yup.string().phone("US").required(),
-    message: yup.string().required(),
+  const schema = object({
+    name: string().required(),
+    email: string().email().required(),
+    phone: string().phone("US").required(),
+    message: string().required(),
   });
 
-  type Schema = yup.InferType<typeof schema>;
+  type Schema = InferType<typeof schema>;
 
   const state = reactive({
     name: undefined,
