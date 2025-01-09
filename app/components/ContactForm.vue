@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-  import type { FormSubmitEvent } from "#ui/types";
+  import type { Form, FormSubmitEvent } from "#ui/types";
   import * as yup from "yup";
   import "yup-phone-lite";
 
@@ -93,8 +93,30 @@
     message: undefined,
   });
 
-  async function onSubmit(event: FormSubmitEvent<Schema>) {
-    console.log(event);
+  const form = ref<Form<Schema>>();
+
+  function onSubmit(event: FormSubmitEvent<Schema>) {
+    $fetch("https://formsubmit.co/ajax/nmurdaugh42@gmail.com", {
+      parseResponse: JSON.parse,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: "Contact Form",
+        message: `Name: ${state.name}\nEmail: ${state.email}\nPhone: ${state.phone}\nMessage: ${state.message}`,
+      }),
+    })
+      .then((response: any) => {
+        if (response.success === "true") {
+          console.log("success");
+        }
+        console.log(response.message);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   const loading = ref(false);
