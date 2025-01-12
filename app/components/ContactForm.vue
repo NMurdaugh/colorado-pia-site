@@ -95,29 +95,34 @@
 
   const form = ref<Form<Schema>>();
 
-  function onSubmit(event: FormSubmitEvent<Schema>) {
-    $fetch("https://formsubmit.co/ajax/nmurdaugh42@gmail.com", {
-      parseResponse: JSON.parse,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: "Contact Form",
-        message: `Name: ${state.name}\nEmail: ${state.email}\nPhone: ${state.phone}\nMessage: ${state.message}`,
-      }),
-    })
-      .then((response: any) => {
-        if (response.success === "true") {
-          console.log("success");
-        }
-        console.log(response.message);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-
   const loading = ref(false);
+
+  async function onSubmit(event: FormSubmitEvent<Schema>) {
+    try {
+      loading.value = true;
+      const response = await $fetch('/api/contact', {
+        method: 'POST',
+        body: {
+          name: state.name,
+          email: state.email,
+          phone: state.phone,
+          message: state.message
+        }
+      });
+      
+      if (response.body.success) {
+        // Reset form
+        state.name = undefined;
+        state.email = undefined;
+        state.phone = undefined;
+        state.message = undefined;
+        // You might want to show a success message to the user here
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // You might want to show an error message to the user here
+    } finally {
+      loading.value = false;
+    }
+  }
 </script>
