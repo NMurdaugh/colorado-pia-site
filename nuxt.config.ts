@@ -11,7 +11,22 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/i18n",
     "@nuxt/fonts",
-    "nuxt-mail",
+    [
+      "nuxt-mail",
+      {
+        message: {
+          to: process.env.NUXT_MAIL_TARGET,
+        },
+        smtp: {
+          host: process.env.NUXT_MAIL_SMPT,
+          port: process.env.NUXT_MAIL_PORT,
+          auth: {
+            user: process.env.NUXT_MAIL_USERNAME,
+            pass: process.env.NUXT_MAIL_PASSWORD,
+          },
+        },
+      },
+    ],
   ],
   future: {
     compatibilityVersion: 4,
@@ -30,7 +45,7 @@ export default defineNuxtConfig({
           user: "nickmurdaugh@coloradopia.com",
           pass: process.env.GMAIL_PASSWORD,
         },
-      }
-    }
-  }
+      },
+    },
+  },
 });
