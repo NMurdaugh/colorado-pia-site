@@ -23,7 +23,6 @@
     >
       <UInput
         v-model="state.email"
-        type="email"
         placeholder="your.email@example.com"
         icon="i-ic:outline-email"
         :ui
@@ -100,16 +99,16 @@
   async function onSubmit(event: FormSubmitEvent<Schema>) {
     try {
       loading.value = true;
-      const response = await $fetch('/api/contact', {
-        method: 'POST',
+      const response = await $fetch("/api/contact", {
+        method: "POST",
         body: {
           name: state.name,
           email: state.email,
           phone: state.phone,
-          message: state.message
-        }
+          message: state.message,
+        },
       });
-      
+
       if (response.body.success) {
         // Reset form
         state.name = undefined;
@@ -119,7 +118,7 @@
         // You might want to show a success message to the user here
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       // You might want to show an error message to the user here
     } finally {
       loading.value = false;
