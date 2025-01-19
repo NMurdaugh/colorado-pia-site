@@ -1,0 +1,20 @@
+form:
+  name:
+    label: Full Name
+    placeholder: Jack Bauer
+    error: Please enter your first and last name
+    icon: i-material-symbols:person-outline
+  email:
+    label: Email
+    placeholder: jack.bauer@example.com
+    error: Please enter a valid email address
+    icon: i-ic:outline-email
+  phone:
+    label: Phone
+    placeholder: (123) 456-7890
+    error: Please enter a valid phone number
+    icon: i-mdi:phone
+  message:
+    label: Give a brief description of your issue and desired outcome
+    placeholder: How can we help you?
+    error: Please tell us how we can best serve you

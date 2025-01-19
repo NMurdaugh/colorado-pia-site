@@ -1,54 +1,55 @@
 <template>
   <UForm
+    v-if="data"
     :schema
     :state
     @submit.prevent="onSubmit"
     class="max-w-2xl lg:min-w-[500px] mx-auto space-y-6"
   >
     <UFormGroup
-      label="Full Name"
+      :label="data.form.name.label"
       name="name"
     >
       <UInput
         v-model="state.name"
-        placeholder="Your name"
-        icon="i-material-symbols:person-outline"
+        :placeholder="data.form.name.placeholder"
+        :icon="data.form.name.icon"
         :ui
       />
     </UFormGroup>
 
     <UFormGroup
-      label="Email"
+      :label="data.form.email.label"
       name="email"
     >
       <UInput
         v-model="state.email"
-        placeholder="your.email@example.com"
-        icon="i-ic:outline-email"
+        :placeholder="data.form.email.placeholder"
+        :icon="data.form.email.icon"
         :ui
       />
     </UFormGroup>
 
     <UFormGroup
-      label="Preferred Phone"
+      :label="data.form.phone.label"
       name="phone"
     >
       <UInput
         v-model="state.phone"
         type="tel"
-        placeholder="(555) 555-5555"
-        icon="i-ic:outline-phone"
+        :placeholder="data.form.phone.placeholder"
+        :icon="data.form.phone.icon"
         :ui
       />
     </UFormGroup>
 
     <UFormGroup
-      label="Give a brief description of your issue and desired outcome"
+      :label="data.form.message.label"
       name="message"
     >
       <UTextarea
         v-model="state.message"
-        placeholder="How can we help you?"
+        :placeholder="data.form.message.placeholder"
         :ui
         :rows="4"
         autoresize
@@ -74,13 +75,19 @@
   import { object, string, type InferType } from "yup";
   import "yup-phone-lite";
 
+  const { data } = await useAsyncData("contact-form", () =>
+    queryContent("/forms/contactform").findOne()
+  );
+
   const ui = { input: "dark:bg-gray-800" };
 
+  const emailError = data.value?.form.email.error;
+
   const schema = object({
-    name: string().required(),
-    email: string().email().required(),
-    phone: string().phone("US").required(),
-    message: string().required(),
+    name: string().required(data.value?.form.name.error),
+    email: string().email(emailError).required(emailError),
+    phone: string().phone("US").required(data.value?.form.phone.error),
+    message: string().required(data.value?.form.message.error),
   });
 
   type Schema = InferType<typeof schema>;
