@@ -90,11 +90,11 @@
   const schema = z.object({
     name: z.string({ message: errors.name }).min(1, { message: errors.name }),
     email: z
-      .string()
+      .string({ message: errors.email })
       .email({ message: errors.email })
       .min(1, { message: errors.email }),
     phone: z
-      .string()
+      .string({ message: errors.phone })
       .regex(/^(\+?1)?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/, {
         message: errors.phone,
       })
