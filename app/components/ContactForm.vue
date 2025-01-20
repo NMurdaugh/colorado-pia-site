@@ -72,8 +72,7 @@
 
 <script setup lang="ts">
   import type { Form, FormSubmitEvent } from "#ui/types";
-  import { object, string, type InferType } from "yup";
-  import "yup-phone-lite";
+  import { z } from "zod";
 
   const { data } = await useAsyncData("contact-form", () =>
     queryContent("/forms/contactform").findOne()
@@ -81,16 +80,31 @@
 
   const ui = { input: "dark:bg-gray-800" };
 
-  const emailError = data.value?.form.email.error;
+  const errors = {
+    name: data.value?.form.name.error,
+    email: data.value?.form.email.error,
+    phone: data.value?.form.phone.error,
+    message: data.value?.form.message.error,
+  };
 
-  const schema = object({
-    name: string().required(data.value?.form.name.error),
-    email: string().email(emailError).required(emailError),
-    phone: string().phone("US").required(data.value?.form.phone.error),
-    message: string().required(data.value?.form.message.error),
+  const schema = z.object({
+    name: z.string({ message: errors.name }).min(1, { message: errors.name }),
+    email: z
+      .string()
+      .email({ message: errors.email })
+      .min(1, { message: errors.email }),
+    phone: z
+      .string()
+      .regex(/^(\+?1)?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/, {
+        message: errors.phone,
+      })
+      .min(1, { message: errors.phone }),
+    message: z
+      .string({ message: errors.message })
+      .min(1, { message: errors.message }),
   });
 
-  type Schema = InferType<typeof schema>;
+  type Schema = z.infer<typeof schema>;
 
   const state = reactive({
     name: undefined,
