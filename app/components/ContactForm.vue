@@ -1,8 +1,8 @@
 <template>
   <UForm
     v-if="data"
-    :schema
-    :state
+    :schema="schema"
+    :state="state"
     @submit.prevent="onSubmit"
     class="max-w-2xl lg:min-w-[500px] mx-auto space-y-6"
   >
@@ -14,7 +14,7 @@
         v-model="state.name"
         :placeholder="data.form.name.placeholder"
         :icon="data.form.name.icon"
-        :ui
+        :ui="ui"
       />
     </UFormGroup>
 
@@ -26,7 +26,7 @@
         v-model="state.email"
         :placeholder="data.form.email.placeholder"
         :icon="data.form.email.icon"
-        :ui
+        :ui="ui"
       />
     </UFormGroup>
 
@@ -39,7 +39,7 @@
         type="tel"
         :placeholder="data.form.phone.placeholder"
         :icon="data.form.phone.icon"
-        :ui
+        :ui="ui"
       />
     </UFormGroup>
 
@@ -50,7 +50,7 @@
       <UTextarea
         v-model="state.message"
         :placeholder="data.form.message.placeholder"
-        :ui
+        :ui="ui"
         :rows="4"
         autoresize
       />
@@ -72,7 +72,10 @@
 
 <script setup lang="ts">
   import type { Form, FormSubmitEvent } from "#ui/types";
-  import { z } from "zod";
+  import {
+    getContactFormSchema,
+    type ContactFormSchema,
+  } from "~/schemas/contactForm";
 
   const { data } = await useAsyncData("contact-form", () =>
     queryContent("/forms/contactform").findOne()
@@ -87,24 +90,7 @@
     message: data.value?.form.message.error,
   };
 
-  const schema = z.object({
-    name: z.string({ message: errors.name }).min(1, { message: errors.name }),
-    email: z
-      .string({ message: errors.email })
-      .email({ message: errors.email })
-      .min(1, { message: errors.email }),
-    phone: z
-      .string({ message: errors.phone })
-      .regex(/^(\+?1)?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/, {
-        message: errors.phone,
-      })
-      .min(1, { message: errors.phone }),
-    message: z
-      .string({ message: errors.message })
-      .min(1, { message: errors.message }),
-  });
-
-  type Schema = z.infer<typeof schema>;
+  const schema = getContactFormSchema(errors);
 
   const state = reactive({
     name: undefined,
@@ -113,11 +99,11 @@
     message: undefined,
   });
 
-  const form = ref<Form<Schema>>();
+  const form = ref<Form<ContactFormSchema>>();
 
   const loading = ref(false);
 
-  async function onSubmit(event: FormSubmitEvent<Schema>) {
+  async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
     try {
       loading.value = true;
       const response = await $fetch("/api/contact", {
