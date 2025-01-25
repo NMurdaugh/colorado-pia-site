@@ -3,7 +3,7 @@ import { getContactFormSchema } from "~/schemas/contactForm";
 const contactSchema = getContactFormSchema({
   name: "Name is required",
   email: "Invalid email address",
-  phone: "Phone number must be at least 10 digits",
+  phone: "Invalid phone number",
   message: "Message is required",
 });
 
