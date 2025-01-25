@@ -24,4 +24,6 @@ export const getContactFormSchema = (errors: {
   });
 };
 
-export type ContactFormSchema = z.infer<ReturnType<typeof getContactFormSchema>>;
+export type ContactFormSchema = z.infer<
+  ReturnType<typeof getContactFormSchema>
+>;
