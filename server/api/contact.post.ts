@@ -1,24 +1,30 @@
-interface ContactForm {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
+import { getContactFormSchema } from "~/schemas/contactForm";
+
+const contactSchema = getContactFormSchema({
+  name: "Name is required",
+  email: "Invalid email address",
+  phone: "Phone number must be at least 10 digits",
+  message: "Message is required",
+});
 
 export default defineEventHandler(async (event: any) => {
   try {
-    const body = await readBody<ContactForm>(event);
+    const body = await readBody(event);
 
-    // Validate required fields
-    if (!body.name || !body.email || !body.phone || !body.message) {
+    // Validate with Zod schema
+    const result = contactSchema.safeParse(body);
+    if (!result.success) {
       return {
         statusCode: 400,
         body: {
           success: false,
-          message: "All fields are required",
+          message: "Validation failed",
+          errors: result.error.errors,
         },
       };
     }
+
+    const validatedData = result.data;
 
     // Here you can add your logic to handle the form data
     // For example, sending an email, storing in a database, etc.
