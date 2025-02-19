@@ -28,6 +28,12 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  icon: {
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 256,
+    },
+  },
   future: {
     compatibilityVersion: 4,
   },
