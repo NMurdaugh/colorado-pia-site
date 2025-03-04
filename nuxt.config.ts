@@ -11,22 +11,6 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/i18n",
     "@nuxt/fonts",
-    [
-      "nuxt-mail",
-      {
-        message: {
-          to: process.env.NUXT_MAIL_TARGET,
-        },
-        smtp: {
-          host: process.env.NUXT_MAIL_SMPT,
-          port: process.env.NUXT_MAIL_PORT,
-          auth: {
-            user: process.env.NUXT_MAIL_USERNAME,
-            pass: process.env.NUXT_MAIL_PASSWORD,
-          },
-        },
-      },
-    ],
   ],
   icon: {
     clientBundle: {
@@ -39,4 +23,10 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      WEB3FORMS_ACCESS_KEY_NICK: process.env.WEB3FORMS_ACCESS_KEY_NICK,
+      WEB3FORMS_ACCESS_KEY_WILL: process.env.WEB3FORMS_ACCESS_KEY_WILL,
+    },
+  },
 });
