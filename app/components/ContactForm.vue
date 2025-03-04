@@ -93,6 +93,8 @@
   const schema = getContactFormSchema(errors);
 
   const state = reactive({
+    access_key: process.env.WEB3FORMS_ACCESS_KEY,
+    subject: "New Lead",
     name: undefined,
     email: undefined,
     phone: undefined,
@@ -103,20 +105,27 @@
 
   const loading = ref(false);
 
+  interface Web3FormsResponse {
+    success: boolean;
+    message?: string;
+    body: {
+      success: boolean;
+    };
+  }
+
   async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
     try {
       loading.value = true;
-      const response = await $fetch("/api/contact", {
-        method: "POST",
-        body: {
-          name: state.name,
-          email: state.email,
-          phone: state.phone,
-          message: state.message,
-        },
-      });
+      const response = await $fetch<Web3FormsResponse>(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: { ...state },
+        }
+      );
 
       if (response.body.success) {
+        console.log(response);
         // Reset form
         state.name = undefined;
         state.email = undefined;
