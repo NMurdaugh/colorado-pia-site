@@ -108,7 +108,7 @@
     email: undefined,
     phone: undefined,
     message: undefined,
-    botcheck: undefined, // Add honeypot field to prevent spam
+    botcheck: false, // Add honeypot field to prevent spam
   });
 
   const form = ref<Form<ContactFormSchema>>();
