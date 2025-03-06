@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  nitro: {
+    preset: "cloudflare_pages",
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   runtimeConfig: {
