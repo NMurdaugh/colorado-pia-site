@@ -62,7 +62,10 @@
       name="botcheck"
       class="hidden"
     />
-
+    <div
+      class="h-captcha"
+      data-captcha="true"
+    ></div>
     <div class="flex justify-end">
       <UButton
         type="submit"
