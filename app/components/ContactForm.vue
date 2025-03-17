@@ -115,6 +115,8 @@
 
   const loading = ref(false);
 
+  const toast = useToast();
+
   interface Web3FormsResponse {
     success: boolean;
     message?: string;
@@ -150,10 +152,20 @@
         state.phone = undefined;
         state.message = undefined;
         // You might want to show a success message to the user here
+        toast.add({
+          title: data.value?.form.success.title,
+          description: data.value?.form.success.message,
+          color: "primary",
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       // You might want to show an error message to the user here
+      toast.add({
+        title: data.value?.form.error.title,
+        description: data.value?.form.error.message,
+        color: "brightred",
+      });
     } finally {
       loading.value = false;
     }
