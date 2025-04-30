@@ -14,7 +14,7 @@
     to="/consultation"
     size="xl"
   />
-  <UButton
+  <!-- <UButton
     id="mobile-emergency"
     class="md:hidden transform transition-all duration-300 hover:scale-105"
     label="Emergency Response"
@@ -32,5 +32,5 @@
     size="xl"
     color="brightred"
     variant="outline"
-  />
+  /> -->
 </template>
