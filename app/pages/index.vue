@@ -59,14 +59,14 @@
       />
     </ULandingGrid>
   </ULandingSection>
-  <ULandingSection
+  <!-- <ULandingSection
     v-if="page"
     :title="page.testimonials.title"
     :description="page.testimonials.description"
     class="py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900"
   >
     <HomeTestimonialCarousel :items="page.testimonials.items" />
-  </ULandingSection>
+  </ULandingSection> -->
   <ULandingSection
     v-if="page"
     :title="page.contact_section.title"
