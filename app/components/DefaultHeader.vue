@@ -1,8 +1,5 @@
 <template>
-  <UHeader
-    :links
-    :ui
-  >
+  <UHeader :ui>
     <template #logo>
       <div class="flex items-center space-x-4">
         <NuxtImg
@@ -20,7 +17,7 @@
         </div>
       </div>
     </template>
-    <template #right>
+    <!-- <template #right>
       <UButton
         class="hidden md:inline-flex text-base px-4 py-2"
         color="brightred"
@@ -37,8 +34,8 @@
         to="/emergency"
         aria-label="Emergency Response Contact"
       />
-      <!-- <UColorModeButton /> -->
-    </template>
+      <UColorModeButton />
+    </template> -->
   </UHeader>
 </template>
 
