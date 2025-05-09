@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/scripts",
   ],
+  scripts: {
+    globals: {
+      turnstile: "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    },
+  },
   icon: {
     clientBundle: {
       scan: true,
