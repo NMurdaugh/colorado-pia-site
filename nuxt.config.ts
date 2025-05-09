@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/i18n",
     "@nuxt/fonts",
+    "@nuxt/scripts",
   ],
   icon: {
     clientBundle: {
