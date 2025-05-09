@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     public: {
       WEB3FORMS_ACCESS_KEY_NICK: process.env.WEB3FORMS_ACCESS_KEY_NICK,
       WEB3FORMS_ACCESS_KEY_WILL: process.env.WEB3FORMS_ACCESS_KEY_WILL,
+      TURNSTILE_SITEKEY: process.env.TURNSTILE_SITEKEY,
     },
   },
 });

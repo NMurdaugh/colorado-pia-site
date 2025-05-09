@@ -63,16 +63,24 @@
       class="hidden"
     />
 
-    <div class="flex justify-end">
-      <UButton
-        type="submit"
-        color="primary"
-        :id="1"
-        :loading="loading"
-        :disabled="loading"
-      >
-        {{ loading ? "Sending..." : "Send Message" }}
-      </UButton>
+    <div class="flex justify-between">
+      <div
+        class="cf-turnstile"
+        :data-sitekey="turnstileSiteKey"
+        data-theme="dark"
+      ></div>
+      <div class="flex items-end">
+        <UButton
+          class="h-auto mb-2"
+          type="submit"
+          color="primary"
+          :id="1"
+          :loading="loading"
+          :disabled="loading"
+        >
+          {{ loading ? "Sending..." : "Send Message" }}
+        </UButton>
+      </div>
     </div>
   </UForm>
 </template>
@@ -89,6 +97,8 @@
   );
 
   const runtimeConfig = useRuntimeConfig();
+
+  const turnstileSiteKey = runtimeConfig.public.TURNSTILE_SITEKEY;
 
   const ui = { input: "dark:bg-gray-800" };
 
