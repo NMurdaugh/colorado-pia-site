@@ -137,16 +137,16 @@
   }
 
   // Define the Turnstile callback function globally
-onMounted(() => {
-  window.onTurnstileCallback = (token: string) => {
-    state.turnstile = token;
-  };
-});
+  onMounted(() => {
+    window.onTurnstileCallback = (token: string) => {
+      state.turnstile = token;
+    };
+  });
 
-async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
+  async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
     try {
       loading.value = true;
-      
+
       // Check if turnstile token exists
       if (!state.turnstile) {
         toast.add({
@@ -159,25 +159,26 @@ async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
       }
 
       // Verify the Turnstile token with our server API
-      const verifyResult = await $fetch('/api/verify-turnstile', {
-        method: 'POST',
+      const verifyResult = await $fetch("/api/verify-turnstile", {
+        method: "POST",
         body: {
           token: state.turnstile,
-        }
+        },
       });
 
       if (!verifyResult.success) {
         toast.add({
           title: "Verification Failed",
-          description: "Cloudflare Turnstile verification failed. Please try again.",
+          description:
+            "Cloudflare Turnstile verification failed. Please try again.",
           color: "red",
         });
-        
+
         // Reset Turnstile widget
         if (window.turnstile) {
           window.turnstile.reset();
         }
-        
+
         loading.value = false;
         return;
       }
@@ -207,7 +208,7 @@ async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
         state.phone = undefined;
         state.message = undefined;
         state.turnstile = undefined;
-        
+
         // Reset Turnstile widget
         if (window.turnstile) {
           window.turnstile.reset();
