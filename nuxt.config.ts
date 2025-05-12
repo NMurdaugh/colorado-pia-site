@@ -33,6 +33,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   runtimeConfig: {
+    // Private server-side only keys
+    TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
+    
+    // Public keys exposed to the client
     public: {
       WEB3FORMS_ACCESS_KEY_NICK: process.env.WEB3FORMS_ACCESS_KEY_NICK,
       WEB3FORMS_ACCESS_KEY_WILL: process.env.WEB3FORMS_ACCESS_KEY_WILL,
