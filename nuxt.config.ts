@@ -35,7 +35,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Private server-side only keys
     TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
-    
+    TURNSTILE_SECRET_KEY_TESTING: process.env.TURNSTILE_SECRET_KEY_TESTING,
+    TURNSTILE_SITE_KEY_TESTING: process.env.TURNSTILE_SITE_KEY_TESTING,
+
     // Public keys exposed to the client
     public: {
       WEB3FORMS_ACCESS_KEY_NICK: process.env.WEB3FORMS_ACCESS_KEY_NICK,
