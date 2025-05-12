@@ -63,16 +63,26 @@
       class="hidden"
     />
 
-    <div class="flex justify-end">
-      <UButton
-        type="submit"
-        color="primary"
-        :id="1"
-        :loading="loading"
-        :disabled="loading"
-      >
-        {{ loading ? "Sending..." : "Send Message" }}
-      </UButton>
+    <div class="flex justify-between">
+      <div
+        class="cf-turnstile"
+        :data-sitekey="turnstileSiteKey"
+        data-theme="dark"
+        data-callback="onTurnstileCallback"
+        name="turnstile"
+      ></div>
+      <div class="flex items-end">
+        <UButton
+          class="h-auto mb-2"
+          type="submit"
+          color="primary"
+          :id="1"
+          :loading="loading"
+          :disabled="loading"
+        >
+          {{ loading ? "Sending..." : "Send Message" }}
+        </UButton>
+      </div>
     </div>
   </UForm>
 </template>
@@ -89,6 +99,8 @@
   );
 
   const runtimeConfig = useRuntimeConfig();
+
+  const turnstileSiteKey = runtimeConfig.public.TURNSTILE_SITEKEY;
 
   const ui = { input: "dark:bg-gray-800" };
 
@@ -109,6 +121,7 @@
     phone: undefined,
     message: undefined,
     botcheck: false, // Add honeypot field to prevent spam
+    turnstile: undefined, // Cloudflare Turnstile token
   });
 
   const form = ref<Form<ContactFormSchema>>();
@@ -123,9 +136,52 @@
     data: object;
   }
 
+  // Define the Turnstile callback function globally
+  onMounted(() => {
+    window.onTurnstileCallback = (token: string) => {
+      state.turnstile = token;
+    };
+  });
+
   async function onSubmit(event: FormSubmitEvent<ContactFormSchema>) {
     try {
       loading.value = true;
+
+      // Check if turnstile token exists
+      if (!state.turnstile) {
+        toast.add({
+          title: "Verification Required",
+          description: "Please complete the Cloudflare Turnstile verification",
+          color: "orange",
+        });
+        loading.value = false;
+        return;
+      }
+
+      // Verify the Turnstile token with our server API
+      const verifyResult = await $fetch("/api/verify-turnstile", {
+        method: "POST",
+        body: {
+          token: state.turnstile,
+        },
+      });
+
+      if (!verifyResult.success) {
+        toast.add({
+          title: "Verification Failed",
+          description:
+            "Cloudflare Turnstile verification failed. Please try again.",
+          color: "red",
+        });
+
+        // Reset Turnstile widget
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+
+        loading.value = false;
+        return;
+      }
 
       // Prepare data for submission
       const formData = { ...state };
@@ -151,6 +207,12 @@
         state.email = undefined;
         state.phone = undefined;
         state.message = undefined;
+        state.turnstile = undefined;
+
+        // Reset Turnstile widget
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
         // You might want to show a success message to the user here
         toast.add({
           title: data.value?.form.success.title,

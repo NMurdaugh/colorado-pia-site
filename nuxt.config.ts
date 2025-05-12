@@ -11,7 +11,13 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/i18n",
     "@nuxt/fonts",
+    "@nuxt/scripts",
   ],
+  scripts: {
+    globals: {
+      turnstile: "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    },
+  },
   icon: {
     clientBundle: {
       scan: true,
@@ -27,9 +33,16 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   runtimeConfig: {
+    // Private server-side only keys
+    TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
+    TURNSTILE_SECRET_KEY_TESTING: process.env.TURNSTILE_SECRET_KEY_TESTING,
+    TURNSTILE_SITE_KEY_TESTING: process.env.TURNSTILE_SITE_KEY_TESTING,
+
+    // Public keys exposed to the client
     public: {
       WEB3FORMS_ACCESS_KEY_NICK: process.env.WEB3FORMS_ACCESS_KEY_NICK,
       WEB3FORMS_ACCESS_KEY_WILL: process.env.WEB3FORMS_ACCESS_KEY_WILL,
+      TURNSTILE_SITEKEY: process.env.TURNSTILE_SITEKEY,
     },
   },
 });

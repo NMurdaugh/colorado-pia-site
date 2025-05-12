@@ -24,6 +24,7 @@ export const getContactFormSchema = (errors: {
     botcheck: z.boolean().refine((val) => val === false, {
       message: "Bot check failed",
     }),
+    turnstile: z.string().optional(),
   });
 };
 
