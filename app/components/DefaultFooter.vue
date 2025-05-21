@@ -1,6 +1,6 @@
 <template>
   <UFooter>
-    <template #left>
+    <template #center>
       Copyright © {{ new Date().getFullYear() }} Colorado Protection and
       Investigation Agency. All rights reserved.
     </template>
