@@ -4,7 +4,7 @@
     :schema="schema"
     :state="state"
     @submit.prevent="onSubmit"
-    class="max-w-2xl lg:min-w-[500px] mx-auto space-y-6"
+    class="max-w-2xl sm:min-w-[500px] mx-auto space-y-6"
   >
     <UFormGroup
       :label="data.form.name.label"
@@ -63,7 +63,7 @@
       class="hidden"
     />
 
-    <div class="flex justify-between">
+    <div class="flex lg:flex-row flex-col justify-between place-items-end">
       <div
         class="cf-turnstile"
         :data-sitekey="turnstileSiteKey"
@@ -121,7 +121,7 @@
     phone: undefined,
     message: undefined,
     botcheck: false, // Add honeypot field to prevent spam
-    turnstile: undefined, // Cloudflare Turnstile token
+    turnstile: undefined as undefined | string, // Cloudflare Turnstile token
   });
 
   const form = ref<Form<ContactFormSchema>>();
