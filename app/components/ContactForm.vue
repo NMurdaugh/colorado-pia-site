@@ -183,10 +183,9 @@
         return;
       }
 
-      // Prepare data for submission
-      const formData = { ...state };
-
-      formData.subject = `New Lead: ${formData.name}`; // Add name to subject
+      // Prepare data for submission, adding all data but turnstile token
+      const { turnstile, ...formData } = state;
+      formData.subject = `New Lead: ${formData.name}`;
 
       const response = await $fetch<Web3FormsResponse>(
         "https://api.web3forms.com/submit",
