@@ -1,92 +1,91 @@
 <template>
-  <ClientOnly>
-    <UForm
-      v-if="data"
-      :schema="schema"
-      :state="state"
-      @submit.prevent="onSubmit"
-      class="max-w-2xl sm:min-w-[500px] mx-auto space-y-6"
+  <UForm
+    v-if="data"
+    :schema="schema"
+    :state="state"
+    @submit.prevent="onSubmit"
+    class="max-w-2xl sm:min-w-[500px] mx-auto space-y-6"
+  >
+    <UFormGroup
+      :label="data.form.name.label"
+      name="name"
     >
-      <UFormGroup
-        :label="data.form.name.label"
-        name="name"
-      >
-        <UInput
-          v-model="state.name"
-          :placeholder="data.form.name.placeholder"
-          :icon="data.form.name.icon"
-          :ui="ui"
-        />
-      </UFormGroup>
-
-      <UFormGroup
-        :label="data.form.email.label"
-        name="email"
-      >
-        <UInput
-          v-model="state.email"
-          :placeholder="data.form.email.placeholder"
-          :icon="data.form.email.icon"
-          :ui="ui"
-        />
-      </UFormGroup>
-
-      <UFormGroup
-        :label="data.form.phone.label"
-        name="phone"
-      >
-        <UInput
-          v-model="state.phone"
-          type="tel"
-          :placeholder="data.form.phone.placeholder"
-          :icon="data.form.phone.icon"
-          :ui="ui"
-        />
-      </UFormGroup>
-
-      <UFormGroup
-        :label="data.form.message.label"
-        name="message"
-      >
-        <UTextarea
-          v-model="state.message"
-          :placeholder="data.form.message.placeholder"
-          :ui="ui"
-          :rows="4"
-          autoresize
-        />
-      </UFormGroup>
-
-      <UCheckbox
-        v-model="state.botcheck"
-        label="I am not a robot"
-        name="botcheck"
-        class="hidden"
+      <UInput
+        v-model="state.name"
+        :placeholder="data.form.name.placeholder"
+        :icon="data.form.name.icon"
+        :ui="ui"
       />
+    </UFormGroup>
 
-      <div class="flex lg:flex-row flex-col justify-between place-items-end">
-        <div
-          class="cf-turnstile"
-          :data-sitekey="turnstileSiteKey"
-          data-theme="dark"
-          data-callback="onTurnstileCallback"
-          name="turnstile"
-        ></div>
-        <div class="flex items-end">
-          <UButton
-            class="h-auto mb-2"
-            type="submit"
-            color="primary"
-            :id="1"
-            :loading="loading"
-            :disabled="loading"
-          >
-            {{ loading ? "Sending..." : "Send Message" }}
-          </UButton>
-        </div>
+    <UFormGroup
+      :label="data.form.email.label"
+      name="email"
+    >
+      <UInput
+        v-model="state.email"
+        :placeholder="data.form.email.placeholder"
+        :icon="data.form.email.icon"
+        :ui="ui"
+      />
+    </UFormGroup>
+
+    <UFormGroup
+      :label="data.form.phone.label"
+      name="phone"
+    >
+      <UInput
+        v-model="state.phone"
+        type="tel"
+        :placeholder="data.form.phone.placeholder"
+        :icon="data.form.phone.icon"
+        :ui="ui"
+      />
+    </UFormGroup>
+
+    <UFormGroup
+      :label="data.form.message.label"
+      name="message"
+    >
+      <UTextarea
+        v-model="state.message"
+        :placeholder="data.form.message.placeholder"
+        :ui="ui"
+        :rows="4"
+        autoresize
+      />
+    </UFormGroup>
+
+    <UCheckbox
+      v-model="state.botcheck"
+      label="I am not a robot"
+      name="botcheck"
+      class="hidden"
+    />
+
+    <div class="flex lg:flex-row flex-col justify-between place-items-end">
+      <NuxtTurnstile v-model="state.turnstile" />
+      <!-- <div
+        class="cf-turnstile"
+        :data-sitekey="turnstileSiteKey"
+        data-theme="dark"
+        data-callback="onTurnstileCallback"
+        name="turnstile"
+      ></div> -->
+      <div class="flex items-end">
+        <UButton
+          class="h-auto mb-2"
+          type="submit"
+          color="primary"
+          :id="1"
+          :loading="loading"
+          :disabled="loading"
+        >
+          {{ loading ? "Sending..." : "Send Message" }}
+        </UButton>
       </div>
-    </UForm>
-  </ClientOnly>
+    </div>
+  </UForm>
 </template>
 
 <script setup lang="ts">
