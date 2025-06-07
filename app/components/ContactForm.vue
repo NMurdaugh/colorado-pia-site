@@ -64,13 +64,14 @@
     />
 
     <div class="flex lg:flex-row flex-col justify-between place-items-end">
-      <div
+      <NuxtTurnstile v-model="state.turnstile" />
+      <!-- <div
         class="cf-turnstile"
         :data-sitekey="turnstileSiteKey"
         data-theme="dark"
         data-callback="onTurnstileCallback"
         name="turnstile"
-      ></div>
+      ></div> -->
       <div class="flex items-end">
         <UButton
           class="h-auto mb-2"

@@ -12,11 +12,11 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxt/fonts",
     "@nuxt/scripts",
+    "@nuxtjs/turnstile",
   ],
-  scripts: {
-    globals: {
-      turnstile: "https://challenges.cloudflare.com/turnstile/v0/api.js",
-    },
+  turnstile: {
+    siteKey: process.env.TURNSTILE_SITEKEY,
+    secretKey: process.env.TURNSTILE_SECRET_KEY,
   },
   icon: {
     clientBundle: {
