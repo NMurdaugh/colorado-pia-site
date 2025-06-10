@@ -17,25 +17,35 @@
         </div>
       </div>
     </template>
-    <!-- <template #right>
+    <template #right>
       <UButton
         class="hidden md:inline-flex text-base px-4 py-2"
-        color="brightred"
-        variant="outline"
-        label="Emergency Response"
-        to="/emergency"
-        aria-label="Emergency Response Contact"
+        label="Book a call"
+        to="consultation/"
+        aria-label="Book a Call"
       />
       <UButton
         class="md:hidden text-sm px-2 py-1"
-        color="brightred"
-        variant="outline"
-        label="Emergency Response"
-        to="/emergency"
-        aria-label="Emergency Response Contact"
+        label="Book a call"
+        to="consultation/"
+        aria-label="Book a Call"
       />
-      <UColorModeButton />
-    </template> -->
+      <!-- add phone number that dials -->
+      <UButton
+        class="hidden md:inline-flex text-base px-4 py-2"
+        variant="outline"
+        label="Call Us"
+        aria-label="Call Us"
+        to="tel:303-578-0879"
+      />
+      <UButton
+        class="md:hidden text-sm px-2 py-1"
+        variant="outline"
+        label="Call Us"
+        aria-label="Call Us"
+        to="tel:303-578-0879"
+      />
+    </template>
   </UHeader>
 </template>
 
