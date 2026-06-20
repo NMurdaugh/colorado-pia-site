@@ -1,16 +1,12 @@
 hero_section:
   title_static_top: Protecting
-  title_static_bottom: Colorado's
+  title_static_bottom: your
   dynamic_words:
     - businesses
     - schools
     - religious institutions
     - future
-  description:
-    Our mission is to protect what matters most by employing experienced
-    professionals, offering comprehensive training, and maintaining
-    stringent standards to ensure exceptional service for our valued
-    clients.
+  description: Our mission is to deliver Confidential and Proactive security solutions through advanced Intelligence and Analytical precision, ensuring total asset protection and strategic peace of mind for our clients.
 
 services_section:
   title: Expert Security Solutions
