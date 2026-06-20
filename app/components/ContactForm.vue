@@ -115,7 +115,7 @@
   const schema = getContactFormSchema(errors); // used in template
 
   const state = reactive({
-    access_key: runtimeConfig.public.WEB3FORMS_ACCESS_KEY_NICK, // Using the key directly as provided
+    access_key: runtimeConfig.public.WEB3FORMS_ACCESS_KEY_WILL, // Using the key directly as provided
     subject: "New Lead",
     name: undefined,
     email: undefined,
