@@ -12,11 +12,6 @@ services_section:
   title: Expert Security Solutions
   description: Protecting What Matters Most with Professional Excellence
   services:
-    - title: Workplace Violence Prevention
-      description: Advanced threat assessment and prevention strategies to create safer workplaces. Our proven protocols help protect your employees and assets.
-      # to: /workplace-security
-      icon: i-heroicons:building-office
-      img_source: /corporate_security_checkpoint.jpg
     - title: School Security
       description: Comprehensive security solutions designed specifically for educational institutions. We help create safe learning environments where students can thrive.
       # to: /school-security
@@ -27,6 +22,11 @@ services_section:
       # to: /religious-security
       icon: i-mdi:church-outline
       img_source: /smiling_church_small_group.jpg
+    - title: Workplace Violence Prevention
+      description: Advanced threat assessment and prevention strategies to create safer workplaces. Our proven protocols help protect your employees and assets.
+      # to: /workplace-security
+      icon: i-heroicons:building-office
+      img_source: /corporate_security_checkpoint.jpg
     - title: Individual Protection
       description: Personalized security services for high-profile individuals. We provide discrete, comprehensive protection tailored to your lifestyle.
       # to: /high-profile-security
