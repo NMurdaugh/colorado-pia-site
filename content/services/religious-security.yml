@@ -1,0 +1,29 @@
+title: Religious Institution Security
+hero:
+  title: Worship in Peace, Protected with Discretion
+  description: Discreet and respectful security measures that preserve the sanctity of worship while ensuring the safety of your congregation.
+overview:
+  title: Security That Honors Your Mission
+  description: We provide protection tailored to the unique environment of churches, synagogues, mosques, temples, and other houses of worship.
+  features:
+    - title: Congregation Safety Plans
+      description: Develop security plans that protect gatherings without disrupting the spiritual experience.
+      icon: i-mdi:church-outline
+    - title: Usher & Volunteer Training
+      description: Equip trusted members with observation and response skills appropriate for your community.
+      icon: i-heroicons:users
+    - title: Event Security
+      description: Coordinate protection for services, weddings, funerals, festivals, and outreach events.
+      icon: i-heroicons:calendar
+details:
+  title: Respectful Protection for Houses of Worship
+  description: Our approach is built on cultural sensitivity, discretion, and partnership with leadership.
+  paragraphs:
+    - Religious institutions should be places of refuge. We work closely with clergy, staff, and volunteers to understand your values and routines.
+    - Our security recommendations are designed to be low-profile yet effective, preserving the welcoming atmosphere your congregation expects.
+    - Whether you need a one-time assessment or ongoing support, we adapt our services to your schedule, building, and community needs.
+cta:
+  title: Secure Your Congregation
+  description: Contact us for a confidential consultation about your house of worship.
+  button_label: Book a Consultation
+  button_to: /consultation

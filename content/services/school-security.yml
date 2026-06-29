@@ -1,0 +1,29 @@
+title: School Security
+hero:
+  title: Safe Schools, Confident Communities
+  description: Comprehensive security solutions designed specifically for educational institutions, from K-12 through higher education.
+overview:
+  title: Protecting Students and Staff
+  description: We help create safe learning environments where students can thrive and staff can focus on education.
+  features:
+    - title: Campus Assessments
+      description: Evaluate physical security, access control, and emergency procedures across your campus.
+      icon: i-heroicons:building-library
+    - title: Emergency Preparedness
+      description: Develop and rehearse lockdown, evacuation, and reunification plans tailored to your school.
+      icon: i-heroicons:bolt
+    - title: Staff & Faculty Training
+      description: Train educators and administrators to recognize threats and respond calmly under pressure.
+      icon: i-heroicons:academic-cap
+details:
+  title: Security Built for Education
+  description: Our school security programs balance safety with a welcoming learning environment.
+  paragraphs:
+    - Schools face unique challenges, from open campuses to large events. We assess your specific risks and design practical, age-appropriate security measures.
+    - We partner with administrators, resource officers, and local first responders to build coordinated response plans.
+    - Ongoing training and drills ensure your staff and students are prepared without creating anxiety or disruption.
+cta:
+  title: Protect Your School Today
+  description: Schedule a free assessment to discuss your campus safety needs.
+  button_label: Book a Consultation
+  button_to: /consultation

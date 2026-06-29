@@ -7,22 +7,22 @@ export const headerLinks: NavLink[] = [
     children: [
       {
         label: "Workplace Violence Prevention",
-        to: "/workplace-security",
+        to: "/services/workplace-security",
         icon: "i-heroicons:building-office",
       },
       {
         label: "Schools",
-        to: "/school-security",
+        to: "/services/school-security",
         icon: "i-heroicons:academic-cap",
       },
       {
         label: "Religious Institutions",
-        to: "/religious-security",
+        to: "/services/religious-security",
         icon: "i-mdi:church-outline",
       },
       {
         label: "High Profile Individuals",
-        to: "/high-profile-security",
+        to: "/services/high-profile-security",
         icon: "i-dashicons:businessman",
       },
     ],

@@ -1,0 +1,29 @@
+title: Individual Protection
+hero:
+  title: Personalized Protection for High-Profile Lives
+  description: Discreet, comprehensive security services tailored to executives, public figures, and individuals facing elevated risk.
+overview:
+  title: Protection That Fits Your Lifestyle
+  description: We provide personalized security that moves with you, from daily routines to travel and special events.
+  features:
+    - title: Executive Protection
+      description: Professional close protection agents trained in advance work, risk mitigation, and emergency response.
+      icon: i-heroicons:user-shield
+    - title: Travel Security
+      description: Route planning, venue assessments, and secure transportation for domestic and international travel.
+      icon: i-heroicons:globe-alt
+    - title: Residential Security
+      description: Assess and fortify your home environment with smart, unobtrusive protective measures.
+      icon: i-heroicons:home
+details:
+  title: Discretion, Preparedness, and Trust
+  description: Our individual protection services are built around confidentiality and proactive planning.
+  paragraphs:
+    - High-profile individuals require more than a visible presence. We conduct detailed risk assessments and build customized protection plans that align with your schedule and preferences.
+    - Our agents are selected for professionalism, judgment, and discretion, ensuring you feel secure without sacrificing privacy or comfort.
+    - From one-time event coverage to full-time protective details, we scale our services to match your evolving needs.
+cta:
+  title: Discuss Your Protection Needs
+  description: Reach out for a confidential consultation with our protection team.
+  button_label: Book a Consultation
+  button_to: /consultation
