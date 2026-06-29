@@ -15,6 +15,9 @@ overview:
     - title: Staff & Faculty Training
       description: Train educators and administrators to recognize threats and respond calmly under pressure.
       icon: i-heroicons:academic-cap
+    - title: Trained Armed Officers
+      description: Professional, licensed security officers trained specifically for educational environments, providing a reassuring protective presence.
+      icon: i-mdi:police-badge
 details:
   title: Security Built for Education
   description: Our school security programs balance safety with a welcoming learning environment.
