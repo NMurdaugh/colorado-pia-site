@@ -1,0 +1,29 @@
+title: Workplace Violence Prevention
+hero:
+  title: Prevent Workplace Violence Before It Happens
+  description: Proactive threat assessment, safety protocols, and training tailored to your organization.
+overview:
+  title: Comprehensive Workplace Security
+  description: We identify risks, train staff, and implement protocols that protect your people and your operations.
+  features:
+    - title: Threat Assessment
+      description: Early identification of behavioral warning signs, escalation pathways, and intervention opportunities.
+      icon: i-heroicons:shield-check
+    - title: Staff Training
+      description: Practical, scenario-based training so employees know how to recognize and respond safely.
+      icon: i-heroicons:user-group
+    - title: Crisis Response Plans
+      description: Customized response plans aligned with your facility, culture, and operations.
+      icon: i-heroicons:clipboard-document-check
+details:
+  title: How We Protect Your Workplace
+  description: Our approach combines intelligence, experience, and discretion.
+  paragraphs:
+    - Every workplace has unique vulnerabilities. We begin with a detailed on-site assessment and stakeholder interviews to understand your environment.
+    - Our team works alongside leadership, HR, and security personnel to develop policies that de-escalate situations before they become incidents.
+    - From active threat training to ongoing advisory support, we ensure your security posture evolves with your organization.
+cta:
+  title: Start With a Free Consultation
+  description: Tell us about your workplace and we will recommend a tailored protection plan.
+  button_label: Book a Consultation
+  button_to: /consultation

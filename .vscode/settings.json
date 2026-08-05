@@ -1,4 +1,6 @@
 {
+  "ts.tsdk.path": "node_modules/typescript/lib",
+  "ts.tsdk.promptToUseWorkspaceVersion": true,
   "tailwindCSS.experimental.classRegex": [
     ["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}", ":\\s*[\"'`]([^\"'`]*).*?[\"'`]"]
